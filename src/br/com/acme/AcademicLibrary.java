@@ -83,4 +83,7 @@ public class AcademicLibrary extends ILibray {
     public Book findBook(String title) {
         return null;//provisorio
     }
+    public User findUser(String name){
+        return null;
+    }
 }
