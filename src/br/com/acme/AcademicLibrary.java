@@ -13,7 +13,7 @@ public class AcademicLibrary extends ILibray {
     private String name;
     private String description;
     private Date creationDate;
-    private HashMap<String, User> users = new HashMap();
+    private HashMap<Long, User> users = new HashMap();
     private HashMap<Long, Article> articles = new HashMap();
     private HashMap<Long, Book> books = new HashMap();
     private boolean selectedLog;
@@ -54,14 +54,16 @@ public class AcademicLibrary extends ILibray {
         this.creationDate = creationDate;
     }
 
-    //Métodos da classe
-    /*public short countArticles() {
+    /*//Métodos da classe
+    public short countArticles() {
         for (short p : publications) {
 
         }
 
         return p;//provisorio
-    }*/
+    }
+    */    
+    
     public short countBooks() {
         return 0;//provisorio
     }
