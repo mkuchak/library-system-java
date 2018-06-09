@@ -20,9 +20,9 @@ public class Journal {
      * @param publisher do Journal
      */
    
-    public Journal(String name, byte impactFactor, Publisher publisher) {
-        this.name = name;
+    public Journal(String name, byte impactFactor, Publisher publisher){
         this.impactFactor = impactFactor;
+        this.name = name;
         this.publisher = publisher;
     }
      
@@ -38,8 +38,14 @@ public class Journal {
         return impactFactor;
     }
 
-    public void setImpactFactor(byte impactFactor) {
+    public void setImpactFactor(byte impactFactor)throws IllegalArgumentException{
+        if (impactFactor < 0) {
+            String msg = "Valor do campo Impact Factor não pode ser NEGATIVO!!!";
+            IllegalArgumentException ex = new IllegalArgumentException(msg);
+            throw ex;
+        }else{
         this.impactFactor = impactFactor;
+        }
     }
 
 }
