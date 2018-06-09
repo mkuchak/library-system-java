@@ -2,10 +2,10 @@ package br.com.acme;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public class Publisher {
-    
+
     private String name;
     private String coutry;
 
@@ -24,6 +24,5 @@ public class Publisher {
     public void setCoutry(String coutry) {
         this.coutry = coutry;
     }
-    
-    
+
 }

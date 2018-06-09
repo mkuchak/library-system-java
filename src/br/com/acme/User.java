@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public class User extends Person {
 

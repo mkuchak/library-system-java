@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public abstract class Publication {
 
@@ -13,16 +13,17 @@ public abstract class Publication {
     private short year;
     private byte volume;
     private List<Author> authors;
-    
-     /**
+
+    /**
      * Método construtor default
      */
-    public Publication(){
-           this.authors = new ArrayList();  
+    public Publication() {
+        this.authors = new ArrayList();
     }
-       
-     /**
+
+    /**
      * Overloading do método construtor
+     *
      * @param title é o título da publicação
      * @param year é o ano da publicação
      * @param volume é o volume da publicação
@@ -32,9 +33,7 @@ public abstract class Publication {
         this.year = year;
         this.volume = volume;
     }
-  
 
-    
     public String getTitle() {
         return title;
     }
@@ -58,6 +57,7 @@ public abstract class Publication {
     public void setVolume(byte volume) {
         this.volume = volume;
     }
+<<<<<<< HEAD
   
        public void addAuthor(Author author){
         Author a = new Author();               
@@ -71,4 +71,7 @@ public abstract class Publication {
         return null;
     }
     
+=======
+
+>>>>>>> e0b7ca47bfc6a3cc8aa8429ca1f59fa788c2e89b
 }

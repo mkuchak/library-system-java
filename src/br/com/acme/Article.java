@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public class Article extends Publication {
 
@@ -14,10 +14,10 @@ public class Article extends Publication {
     private short startPage;
     private short endPage;
     private Journal journal;
-    
+
     public Article() {
         ArrayList keyWords = new ArrayList();
-              
+
     }
 
     public Article(long issn, byte issue, short startPage, short endPage, String title, short year, byte volume) {

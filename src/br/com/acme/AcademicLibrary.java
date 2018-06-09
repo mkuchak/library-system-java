@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public class AcademicLibrary extends ILibray {
 
@@ -22,12 +22,12 @@ public class AcademicLibrary extends ILibray {
         this.name = name;
         this.description = description;
         this.creationDate = new Date();
+        ArrayList publications = new ArrayList();
 
         //this.users = new HashMap();
         //this.articles = new HashMap();
         //this.books = new HashMap();
         //this.selectedLog = true;
-        //publications = new ArrayList<Publication>();
     }
 
     public String getName() {
