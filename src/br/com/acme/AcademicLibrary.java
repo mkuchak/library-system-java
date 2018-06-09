@@ -10,7 +10,6 @@ import java.util.HashMap;
  */
 public class AcademicLibrary extends ILibray {
 
-    private String testeGit;
     private String name;
     private String description;
     private String creationDate;
