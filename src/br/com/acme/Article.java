@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Article extends Publication {
 
-    private ArrayList<String> keyWords;
+    private ArrayList<String> keyWords = new ArrayList();
     private long issn;
     private byte issue;
     private short startPage;
@@ -16,18 +16,33 @@ public class Article extends Publication {
     private Journal journal;
 
     public Article() {
-        ArrayList keyWords = new ArrayList();
-
+    super();    
     }
-
+ 
+     /**
+     * Método construtor que cria um objeto da classe publication com todos os
+     * parametros
+     *
+     * @param issn é o numero do Article
+     * @param issue é o numero do Article
+     * @param startPage é o numero de paginas iniciais
+     * @param endPage é o numero de paginas finais
+     * @param title é o titulo do Article
+     * @param year é o ano do Article
+     * @param volume é o numero do volume do Article
+     */
     public Article(long issn, byte issue, short startPage, short endPage, String title, short year, byte volume) {
-        //super(title, year, volume);
+        super(title, year, volume);
+        this.keyWords = keyWords;
         this.issn = issn;
         this.issue = issue;
         this.startPage = startPage;
         this.endPage = endPage;
+        this.journal = journal;
     }
 
+    
+    
     public void setKeyWords(ArrayList<String> keyWords) {
         //this.keyWords = keyWords;
         keyWords.forEach((i) -> {
@@ -72,11 +87,12 @@ public class Article extends Publication {
 
     }
 
-    /*public ArrayList<String> getKeyWords() {
-
+    public ArrayList<String> getKeyWords() {
+        return null;//provisorio
     }
 
     public boolean removeKeyWords(String key) {
-
-    }*/
+        return false;//provisorio
+    }
+    
 }
