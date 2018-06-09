@@ -38,6 +38,11 @@ public class Journal {
         return impactFactor;
     }
 
+    
+   /* @param impactFactor é um atributo de Journal
+    * @method setImpactFactor é utilizado para modificar o valor se for < 0 lança uma exception pedindo para atribuir um valor que seja > 0
+    * @return retorna o valor de impactFactor
+    */
     public void setImpactFactor(byte impactFactor)throws IllegalArgumentException{
         if (impactFactor < 0) {
             String msg = "Valor do campo Impact Factor não pode ser NEGATIVO!!!";

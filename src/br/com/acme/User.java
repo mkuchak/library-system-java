@@ -49,6 +49,10 @@ public class User extends Person {
         this.password = password;
     }
 
+   /*
+    * @method isValid é utilizado para verificar se o login e senha do usuario são os mesmos no arquivo persistido
+    * @return retorna true se o login e senha estão corretos
+    */
     public boolean isValid() {
         return this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD);
     }
