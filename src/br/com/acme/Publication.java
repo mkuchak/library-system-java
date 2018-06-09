@@ -57,17 +57,27 @@ public abstract class Publication {
     public void setVolume(byte volume) {
         this.volume = volume;
     }
+<<<<<<< HEAD
   
        public void addAuthor(Author author){
         Author a = new Author();               
+=======
+
+    public void addAuthor(Author author) {
+        Author a = new Author();
+>>>>>>> bbbec287490a1a21dac2b865e61d68daed237e5c
     }
-    
-    public void removeAuthor(String name){
-        
+
+    public void removeAuthor(String name) {
+
     }
-        
-    public List<Author> getAuthors(){
+
+    public List<Author> getAuthors() {
         return null;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> bbbec287490a1a21dac2b865e61d68daed237e5c
 }

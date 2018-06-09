@@ -10,6 +10,10 @@ public class Book extends Publication {
     private long isbn;
     private short pages;
 
+    public Book() {
+        super();
+    }
+
     public String getLanguage() {
         return language;
     }
