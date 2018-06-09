@@ -18,7 +18,6 @@ public class Publisher {
 
     /**
      * Overloading do método construtor
-     *
      * @param name nome publisher
      * @param country nome país
      */

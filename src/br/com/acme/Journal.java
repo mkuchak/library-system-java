@@ -1,14 +1,31 @@
 package br.com.acme;
 
 /**
- *
  * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public class Journal {
 
     private String name;
     private byte impactFactor;
+    private Publisher publisher;
 
+   public Journal(){
+        
+    }
+
+     /**
+     * Overloading do método construtor
+     * @param name do Journal
+     * @param impactFactor do Journal
+     * @param publisher do Journal
+     */
+   
+    public Journal(String name, byte impactFactor, Publisher publisher){
+        this.impactFactor = impactFactor;
+        this.name = name;
+        this.publisher = publisher;
+    }
+     
     public String getName() {
         return name;
     }
@@ -21,8 +38,14 @@ public class Journal {
         return impactFactor;
     }
 
-    public void setImpactFactor(byte impactFactor) {
+    public void setImpactFactor(byte impactFactor)throws IllegalArgumentException{
+        if (impactFactor < 0) {
+            String msg = "Valor do campo Impact Factor não pode ser NEGATIVO!!!";
+            IllegalArgumentException ex = new IllegalArgumentException(msg);
+            throw ex;
+        }else{
         this.impactFactor = impactFactor;
+        }
     }
 
 }
