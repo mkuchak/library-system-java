@@ -15,18 +15,18 @@ public abstract class Publication {
     private List<Author> authors;
 
     /**
-     * Método construtor default
+     * Constructor default method
      */
     public Publication() {
         this.authors = new ArrayList();
     }
 
     /**
-     * Overloading do método construtor
+     * Overloading constructor method
      *
-     * @param title é o título da publicação
-     * @param year é o ano da publicação
-     * @param volume é o volume da publicação
+     * @param title publication title
+     * @param year publication year
+     * @param volume publication volume
      */
     public Publication(String title, short year, byte volume) {
         this.title = title;
@@ -58,18 +58,26 @@ public abstract class Publication {
         this.volume = volume;
     }
 
-  
-       public void addAuthor(Author author){
-        Author a = new Author();               
+    /**
+     * Add object on list author
+     *
+     * @param author is the received object
+     */
+    public void addAuthor(Author author) {
+        this.authors.add(author);
+    }
 
-       }
-       
     public void removeAuthor(String name) {
 
     }
 
+    /**
+     * Return the list authors
+     *
+     * @return author
+     */
     public List<Author> getAuthors() {
-        return null;
+        return authors;
     }
 
 }
