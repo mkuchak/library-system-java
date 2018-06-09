@@ -59,5 +59,16 @@ public abstract class Publication {
         this.volume = volume;
     }
   
+       public void addAuthor(Author author){
+        Author a = new Author();               
+    }
+    
+    public void removeAuthor(String name){
+        
+    }
+        
+    public List<Author> getAuthors(){
+        return null;
+    }
     
 }
