@@ -134,7 +134,14 @@ public class AcademicLibrary extends ILibray {
         return null;//provisorio
     }
 
-    public User findUser(String name) {
+   /* @param login é um atributo de User
+    * @method findUser é utilizado para buscar o login do usuario
+    * @return retorna o objeto se encontrado
+    */
+    public User findUser(String login){
+        if (this.users.containsKey(login)) {
+        return this.users.get(login);
+        }
         return null;
     }
 }
