@@ -42,10 +42,9 @@ public class Article extends Publication {
     }
 
     public void setKeyWords(ArrayList<String> keyWords) {
-        //this.keyWords = keyWords;
-        keyWords.forEach((i) -> {
+        for (String i : keyWords) {
             this.keyWords.add(i);
-        });
+        }
     }
 
     public long getIssn() {
