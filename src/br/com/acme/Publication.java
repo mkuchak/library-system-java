@@ -1,12 +1,13 @@
 package br.com.acme;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Willian P
  */
-public class Publication {
+public abstract class Publication {
 
     private String title;
     private short year;
@@ -17,7 +18,7 @@ public class Publication {
      * Método construtor default
      */
     public Publication(){
-           Author a = new Author();  
+           this.authors = new ArrayList();  
     }
        
      /**

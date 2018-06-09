@@ -4,7 +4,7 @@ package br.com.acme;
  *
  * @author Willian P
  */
-public class Person {
+public abstract class Person {
 
 private String name;
 private String email;
