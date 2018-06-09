@@ -1,8 +1,10 @@
 package br.com.acme;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -14,8 +16,8 @@ public class AcademicLibrary extends ILibray {
     private String description;
     private Date creationDate;
     private HashMap<String, User> users = new HashMap();
-    private HashMap<Long, Article> articles = new HashMap();
-    private HashMap<Long, Book> books = new HashMap();
+    private Map<Long, Article> articles;
+    private Map<Long, Book> books;
     private boolean selectedLog;
 
     public AcademicLibrary(String name, String description) {
@@ -28,6 +30,52 @@ public class AcademicLibrary extends ILibray {
         //this.articles = new HashMap();
         //this.books = new HashMap();
         //this.selectedLog = true;
+    }
+
+    /**
+     * Set new user to library system
+     *
+     * @param login is used as object key
+     * @param user saves on users
+     */
+    public void setUsers(String login, User user) { //aqui adiciona um usuário passando login e objeto
+        this.users.put(login, user);
+    }
+
+    /**
+     * Obtain the full list of users on library system
+     *
+     */
+    public ArrayList<User> getUsers() { //retorna todos os usuários do map
+        Collection<User> collectionUsers = this.users.values();
+        ArrayList<User> getUsers = new ArrayList();
+        for (User x : collectionUsers) {
+            getUsers.add(x);
+        }
+        return getUsers;
+    }
+
+    /**
+     * Add new user on map users
+     *
+     * @param user object user to add
+     */
+    public void addUsers(User user) {
+        this.users.put(user.getLogin(), user);
+    }
+
+    /**
+     * Remove some user on map users
+     *
+     * @param login searches on map by login and remove if found
+     * @return true if user was removed and false if isn't
+     */
+    public boolean removeUser(String login) { //procura um usuário pelo login e remove(true) se encontrar, ou falso.
+        if (this.users.containsKey(login)) {
+            this.users.remove(login);
+            return true;
+        }
+        return false;
     }
 
     public String getName() {
