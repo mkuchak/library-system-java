@@ -16,10 +16,10 @@ public class Article extends Publication {
     private Journal journal;
 
     public Article() {
-    super();    
+        super();
     }
- 
-     /**
+
+    /**
      * Método construtor que cria um objeto da classe publication com todos os
      * parametros
      *
@@ -41,8 +41,6 @@ public class Article extends Publication {
         this.journal = journal;
     }
 
-    
-    
     public void setKeyWords(ArrayList<String> keyWords) {
         //this.keyWords = keyWords;
         keyWords.forEach((i) -> {
@@ -94,5 +92,5 @@ public class Article extends Publication {
     public boolean removeKeyWords(String key) {
         return false;//provisorio
     }
-    
+
 }

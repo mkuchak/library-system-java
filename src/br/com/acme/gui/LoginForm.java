@@ -46,6 +46,7 @@ public class LoginForm extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Academic Libray Control System");
 
+        jtfLogin.setText("admin");
         jtfLogin.setName("jtfLogin"); // NOI18N
         jtfLogin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -53,6 +54,7 @@ public class LoginForm extends javax.swing.JDialog {
             }
         });
 
+        jpfPassword.setText("admin");
         jpfPassword.setName("jpfPassword"); // NOI18N
         jpfPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

@@ -67,8 +67,15 @@ public abstract class Publication {
         this.authors.add(author);
     }
 
+    /**
+     * Remove object on list author
+     *
+     * @param name is the object name that will be removed
+     */
     public void removeAuthor(String name) {
-
+        if (authors.contains(name)) {
+            authors.remove(name);
+        }
     }
 
     /**
