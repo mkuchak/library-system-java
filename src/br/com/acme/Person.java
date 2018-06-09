@@ -2,12 +2,12 @@ package br.com.acme;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public abstract class Person {
 
-private String name;
-private String email;
+    private String name;
+    private String email;
 
     public String getName() {
         return name;
@@ -24,7 +24,5 @@ private String email;
     public void setEmail(String email) {
         this.email = email;
     }
-    
-
 
 }

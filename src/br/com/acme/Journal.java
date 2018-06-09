@@ -2,10 +2,10 @@ package br.com.acme;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
 public class Journal {
-    
+
     private String name;
     private byte impactFactor;
 
@@ -24,6 +24,5 @@ public class Journal {
     public void setImpactFactor(byte impactFactor) {
         this.impactFactor = impactFactor;
     }
-    
-    
+
 }

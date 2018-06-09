@@ -2,9 +2,9 @@ package br.com.acme;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
-public class Author extends Person{
+public class Author extends Person {
 
     private String afiliation;
     private boolean isCorrespondingAuthor;
@@ -24,6 +24,5 @@ public class Author extends Person{
     public void setIsCorrespondingAuthor(boolean isCorrespondingAuthor) {
         this.isCorrespondingAuthor = isCorrespondingAuthor;
     }
-    
-    
+
 }

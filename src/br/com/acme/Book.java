@@ -2,10 +2,10 @@ package br.com.acme;
 
 /**
  *
- * @author Willian P
+ * @authors Marcos Kuchak, Willian Patsche, William Hertz
  */
-public class Book extends Publication{
-    
+public class Book extends Publication {
+
     private String language;
     private long isbn;
     private short pages;
@@ -33,6 +33,5 @@ public class Book extends Publication{
     public void setPages(short pages) {
         this.pages = pages;
     }
-    
-    
+
 }
