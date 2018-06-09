@@ -18,11 +18,9 @@ public class AcademicLibrary extends ILibray {
     private HashMap<Long, Book> books = new HashMap();
     private boolean selectedLog;
 
-    public AcademicLibrary(String name, String description, String creationDate){
-        
-        publications = new ArrayList<Publication>();
-        
+    public AcademicLibrary(String name, String description, String creationDate) {
 
+        //publications = new ArrayList<Publication>();
     }
 
     public AcademicLibrary(String name, String description) {
@@ -61,16 +59,13 @@ public class AcademicLibrary extends ILibray {
     }
 
     //Métodos da classe
-    public short countArticles() {
-         for(short p : publications){
-            
-        
-         }
-        
-        
-        return p;//provisorio 
-      }
+    /*public short countArticles() {
+        for (short p : publications) {
 
+        }
+
+        return p;//provisorio
+    }*/
     public short countBooks() {
         return 0;//provisorio
     }
