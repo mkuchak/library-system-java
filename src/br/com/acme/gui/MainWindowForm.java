@@ -43,6 +43,7 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jlLibraryImage = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmFile = new javax.swing.JMenu();
         jmiNew = new javax.swing.JMenuItem();
@@ -67,6 +68,8 @@ public class MainWindowForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Academic Library Control System");
+        setBackground(new java.awt.Color(219, 219, 219));
+        setResizable(false);
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 formKeyPressed(evt);
@@ -104,6 +107,8 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton4.setName("jbmbCreateAccount"); // NOI18N
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton4);
+
+        jlLibraryImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/library.jpg"))); // NOI18N
 
         jMenuBar1.setName("jmbMenu"); // NOI18N
 
@@ -212,13 +217,15 @@ public class MainWindowForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlLibraryImage, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 381, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlLibraryImage))
         );
 
         pack();
@@ -264,6 +271,7 @@ public class MainWindowForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel jlLibraryImage;
     private javax.swing.JMenu jmFile;
     private javax.swing.JMenuItem jmiExit;
     private javax.swing.JMenuItem jmiNew;
