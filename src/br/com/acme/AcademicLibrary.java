@@ -3,13 +3,14 @@ package br.com.acme;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-//teste
+
 /**
  *
  * @author Willian P
  */
 public class AcademicLibrary extends ILibray {
 
+    private String testeGit;
     private String name;
     private String description;
     private String creationDate;
