@@ -16,8 +16,8 @@ public class AcademicLibrary extends ILibray {
     private String description;
     private Date creationDate;
     private HashMap<String, User> users = new HashMap();
-    private Map<Long, Article> articles;
-    private Map<Long, Book> books;
+    private Map<Long, Article> articles; //key: issn
+    private Map<Long, Book> books; //key: isbn
     //private HashMap<Long, User> users = new HashMap();
     //private HashMap<Long, Article> articles = new HashMap();
     //private HashMap<Long, Book> books = new HashMap();
@@ -134,13 +134,13 @@ public class AcademicLibrary extends ILibray {
         return null;//provisorio
     }
 
-   /* @param login é um atributo de User
+    /* @param login é um atributo de User
     * @method findUser é utilizado para buscar o login do usuario
     * @return retorna o objeto se encontrado
-    */
-    public User findUser(String login){
+     */
+    public User findUser(String login) {
         if (this.users.containsKey(login)) {
-        return this.users.get(login);
+            return this.users.get(login);
         }
         return null;
     }
