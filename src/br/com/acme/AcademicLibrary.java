@@ -13,26 +13,22 @@ public class AcademicLibrary extends ILibray {
     private String testeGit;
     private String name;
     private String description;
-    private String creationDate;
+    private Date creationDate;
     private HashMap<String, User> users = new HashMap();
     private HashMap<Long, Article> articles = new HashMap();
     private HashMap<Long, Book> books = new HashMap();
     private boolean selectedLog;
 
-    public AcademicLibrary(String name, String description, String creationDate) {
-
-        //publications = new ArrayList<Publication>();
-    }
-
     public AcademicLibrary(String name, String description) {
-//        this.creationDate = new Date();
         this.name = name;
         this.description = description;
-        this.users = new HashMap();
-        this.articles = new HashMap();
-        this.books = new HashMap();
-        this.selectedLog = true;
+        this.creationDate = new Date();
 
+        //this.users = new HashMap();
+        //this.articles = new HashMap();
+        //this.books = new HashMap();
+        //this.selectedLog = true;
+        //publications = new ArrayList<Publication>();
     }
 
     public String getName() {
