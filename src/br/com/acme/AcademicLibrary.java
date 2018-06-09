@@ -15,15 +15,12 @@ public class AcademicLibrary extends ILibray {
     private String name;
     private String description;
     private Date creationDate;
-<<<<<<< HEAD
     private HashMap<String, User> users = new HashMap();
     private Map<Long, Article> articles;
     private Map<Long, Book> books;
-=======
-    private HashMap<Long, User> users = new HashMap();
-    private HashMap<Long, Article> articles = new HashMap();
-    private HashMap<Long, Book> books = new HashMap();
->>>>>>> 690bcaef9b8001a6a801820786f3d4a83ca39c6b
+    //private HashMap<Long, User> users = new HashMap();
+    //private HashMap<Long, Article> articles = new HashMap();
+    //private HashMap<Long, Book> books = new HashMap();
     private boolean selectedLog;
 
     public AcademicLibrary(String name, String description) {
@@ -116,8 +113,7 @@ public class AcademicLibrary extends ILibray {
 
         return p;//provisorio
     }
-    */    
-    
+     */
     public short countBooks() {
         return 0;//provisorio
     }
@@ -137,7 +133,8 @@ public class AcademicLibrary extends ILibray {
     public Book findBook(String title) {
         return null;//provisorio
     }
-    public User findUser(String name){
+
+    public User findUser(String name) {
         return null;
     }
 }
