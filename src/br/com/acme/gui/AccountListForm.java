@@ -5,16 +5,21 @@
  */
 package br.com.acme.gui;
 
+import java.awt.Frame;
+
 /**
  *
  * @author Marcos Kuchak Filho
  */
-public class ArticleList extends javax.swing.JFrame {
+public class AccountListForm extends javax.swing.JFrame {
+
+    private final Frame MainWindowForm;
 
     /**
-     * Creates new form ArticleList
+     * Creates new form AccountList
      */
-    public ArticleList() {
+    public AccountListForm(java.awt.Frame parent, boolean modal) {
+        this.MainWindowForm = parent;
         initComponents();
     }
 
@@ -28,6 +33,7 @@ public class ArticleList extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -41,11 +47,14 @@ public class ArticleList extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.setVisible(false);
-        //this.MainWindowForm.setVisible(true);
+        this.MainWindowForm.setVisible(true);
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

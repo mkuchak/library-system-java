@@ -240,9 +240,6 @@ public class CreateAccountForm extends javax.swing.JDialog {
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
-    /**
-     * @param args the command line arguments
-     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

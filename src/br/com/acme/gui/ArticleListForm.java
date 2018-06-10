@@ -9,12 +9,12 @@ package br.com.acme.gui;
  *
  * @author Marcos Kuchak Filho
  */
-public class AccountList extends javax.swing.JFrame {
+public class ArticleListForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form AccountList
+     * Creates new form ArticleList
      */
-    public AccountList() {
+    public ArticleListForm() {
         initComponents();
     }
 
@@ -42,12 +42,10 @@ public class AccountList extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.setVisible(false);
         //this.MainWindowForm.setVisible(true);
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
