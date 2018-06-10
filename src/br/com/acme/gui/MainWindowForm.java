@@ -296,7 +296,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jmiExitActionPerformed
 
-<<<<<<< HEAD
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
         try {
@@ -304,27 +303,26 @@ public class MainWindowForm extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
-=======
+
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-         AddBookForm book = new AddBookForm(this, true); 
-         
-            book.setVisible(true); //exibe o dialog do book
-            this.setVisible(false);//esconde a tela principal
+        AddBookForm book = new AddBookForm(this, true);
+
+        book.setVisible(true); //exibe o dialog do book
+        this.setVisible(false);//esconde a tela principal
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         AddArticleForm article = new AddArticleForm(this, true);
         article.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         CreateAccountForm account = new CreateAccountForm(this, true);
         account.setVisible(true);
-        this.setVisible(false);        
+        this.setVisible(false);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
->>>>>>> 77feffc3d467876cf449ce1a42d7b18d69d8bbd7
 
     /**
      * @param args the command line arguments
