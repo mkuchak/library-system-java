@@ -9,18 +9,20 @@ import br.com.acme.AcademicLibrary;
 
 /**
  *
- * @author 
+ * @author
  */
 public class CreateAccountForm extends javax.swing.JDialog {
 
-        private AcademicLibrary library;
+    private AcademicLibrary library;
+
     /**
      * Creates new form CreateAccountForm
      */
     public CreateAccountForm(java.awt.Frame parent, boolean modal) {
+        //library = ALManager.getInstance();
         super(parent, modal);
         initComponents();
-            }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,6 +74,11 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jLabel6.setText("Password:");
 
         jbCreate.setText("Create");
+        jbCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCreateActionPerformed(evt);
+            }
+        });
 
         jbClose.setText("Close");
 
@@ -140,11 +147,13 @@ public class CreateAccountForm extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCreateActionPerformed
+
+    }//GEN-LAST:event_jbCreateActionPerformed
+
     /**
      * @param args the command line arguments
      */
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
