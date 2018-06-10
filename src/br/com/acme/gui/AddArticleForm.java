@@ -5,14 +5,16 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.Author;
 import java.awt.Frame;
+import java.util.List;
 
 /**
  *
  * @author Willian
  */
 public class AddArticleForm extends javax.swing.JDialog {
-
+    private List<Author> authors;
     private final Frame MainWindowForm;
 
     /**
@@ -241,7 +243,7 @@ public class AddArticleForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
-        AuthorForm author = new AuthorForm(this, true);
+        AuthorForm author = new AuthorForm(this, true, authors);
         author.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbAddAuthorActionPerformed

@@ -318,13 +318,13 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         AddBookForm book = new AddBookForm(this, true);
-        this.setVisible(false);
+       // this.setVisible(false);
         book.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         AddArticleForm article = new AddArticleForm(this, true);
-        this.setVisible(false);
+       // this.setVisible(false);
         article.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem9ActionPerformed
