@@ -52,6 +52,7 @@ public class AddBookForm extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Book");
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Book");
@@ -189,17 +190,15 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jtfLanguageActionPerformed
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
-       AuthorForm author = new AuthorForm(this, true);
-            author.setVisible(true); //exibe o dialog do author
-            this.setVisible(false);//esconde a tela book
-        
+        AuthorForm author = new AuthorForm(this, true);
+        author.setVisible(true); //exibe o dialog do author
+        this.setVisible(false);//esconde a tela book
+
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

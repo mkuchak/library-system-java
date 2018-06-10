@@ -19,10 +19,11 @@ public class AuthorForm extends javax.swing.JDialog {
         initComponents();
     }
 
-        public AuthorForm(java.awt.Dialog parent, boolean modal) {
+    public AuthorForm(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,6 +46,7 @@ public class AuthorForm extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Author");
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Add Author ");
@@ -148,6 +150,7 @@ public class AuthorForm extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtfEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfEmailActionPerformed
@@ -165,8 +168,6 @@ public class AuthorForm extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
