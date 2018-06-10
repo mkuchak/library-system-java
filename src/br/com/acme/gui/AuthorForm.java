@@ -6,18 +6,24 @@
 package br.com.acme.gui;
 
 import br.com.acme.Author;
+import java.awt.Dialog;
 import java.awt.Frame;
 import java.util.List;
+import sun.awt.resources.awt;
 
 /**
  *
  * @author Willian
  */
 public class AuthorForm extends javax.swing.JDialog {
+
     private final Frame MainWindowForm;
+    //private final Dialog DMainWindowForm;
     private List<Author> authors;
+
     /**
      * Creates new form AuthorForm
+     *
      * @param parent é passado um frame
      * @param modal
      * @param authors uma lista de autores
@@ -25,10 +31,12 @@ public class AuthorForm extends javax.swing.JDialog {
     public AuthorForm(java.awt.Frame parent, boolean modal, List<Author> authors) {
         super(parent, modal);
         initComponents();
+        this.MainWindowForm = parent;
     }
 
-     /**
+    /**
      * Creates new form AuthorForm
+     *
      * @param parent é passado um Dialog
      * @param modal
      * @param authors uma lista de autores
@@ -185,16 +193,16 @@ public class AuthorForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jtxAfiliationActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
-        
+
         //Author author = new Author(jtxName.getText(), jtxAfiliation.getText(), jtfEmail.getText(), jcblsCorresponding.isSelected());
-        
+
     }//GEN-LAST:event_jbOkActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.setVisible(false);
         this.MainWindowForm.setVisible(true);
     }
-    
+
     /**
      * @param args the command line arguments
      */
