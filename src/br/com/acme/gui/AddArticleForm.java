@@ -60,6 +60,11 @@ public class AddArticleForm extends javax.swing.JDialog {
 
         jbAddAuthor.setText("Add Author");
         jbAddAuthor.setName("jbAddAuthor"); // NOI18N
+        jbAddAuthor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAddAuthorActionPerformed(evt);
+            }
+        });
 
         jbAddKeyword.setText("Add Keyword");
         jbAddKeyword.setName("jbAddKeyword"); // NOI18N
@@ -217,6 +222,12 @@ public class AddArticleForm extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
+        AuthorForm author = new AuthorForm(this, true);
+        
+        
+    }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     /**
      * @param args the command line arguments

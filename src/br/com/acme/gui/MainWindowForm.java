@@ -111,8 +111,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton4.setName("jbmbCreateAccount"); // NOI18N
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton4);
-
-        jSeparator2.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
         jToolBar1.add(jSeparator2);
 
         jlUserInfo.setText("jlUserInfo");
@@ -164,12 +162,22 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/open-book.png"))); // NOI18N
         jMenuItem6.setText("Book");
         jMenuItem6.setName("jmiAddBook"); // NOI18N
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem6);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document.png"))); // NOI18N
         jMenuItem9.setText("Article");
         jMenuItem9.setName("jmiAddArticle"); // NOI18N
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem9);
 
         jMenu2.add(jMenu5);
@@ -200,6 +208,11 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add-user.png"))); // NOI18N
         jMenuItem5.setText("Create");
         jMenuItem5.setName("jmiCreate"); // NOI18N
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -275,6 +288,26 @@ public class MainWindowForm extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_jmiExitActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+         AddBookForm book = new AddBookForm(this, true); 
+         
+            book.setVisible(true); //exibe o dialog do book
+            this.setVisible(false);//esconde a tela principal
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        AddArticleForm article = new AddArticleForm(this, true);
+        article.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        CreateAccountForm account = new CreateAccountForm(this, true);
+        account.setVisible(true);
+        this.setVisible(false);        
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
