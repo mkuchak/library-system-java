@@ -43,14 +43,9 @@ public class AccountList extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-=======
     /**
      * @param args the command line arguments
      */
-    
-
->>>>>>> 1437496b36601c222cabdfb827b52f5df72c2b1a
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
