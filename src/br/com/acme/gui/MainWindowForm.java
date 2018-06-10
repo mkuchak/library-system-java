@@ -95,8 +95,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton1.setName("jbmbNew"); // NOI18N
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton1);
-
-        jSeparator5.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
         jToolBar1.add(jSeparator5);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
@@ -105,8 +103,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton2.setName("jbmbOpen"); // NOI18N
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton2);
-
-        jSeparator4.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
         jToolBar1.add(jSeparator4);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
@@ -115,8 +111,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton3.setName("jbmbSave"); // NOI18N
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton3);
-
-        jSeparator3.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
         jToolBar1.add(jSeparator3);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add-user.png"))); // NOI18N
@@ -283,8 +277,13 @@ public class MainWindowForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jlLibraryImage)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlLibraryImage)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,7 +343,7 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
-        this.setVisible(false);
+        //this.setVisible(false);
         account.setVisible(true);
     }
     /**
