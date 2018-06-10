@@ -6,6 +6,7 @@
 package br.com.acme.gui;
 
 import br.com.acme.AcademicLibrary;
+import br.com.acme.User;
 
 /**
  *
@@ -160,7 +161,12 @@ public class CreateAccountForm extends javax.swing.JDialog {
 
     }//GEN-LAST:event_jbCloseActionPerformed
     private void jbCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCreateActionPerformed
-
+        String name = jtfName.getText();
+        String email = jtfEmail.getText();
+        String phone = jtfPhone.getText();
+        String login = jtfLogin.getText().trim();
+        String password = jtfPassword.getText();
+        User usr = new User(name, email, phone, login, password);
     }//GEN-LAST:event_jbCreateActionPerformed
 
     /**

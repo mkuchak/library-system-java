@@ -8,6 +8,8 @@ import java.util.Date;
  */
 public class User extends Person {
 
+    private String name;
+    private String email;
     private String phone;
     private String login;
     private String password;
@@ -15,10 +17,35 @@ public class User extends Person {
     private final String LOGIN = "admin";
     private final String PASSWORD = "admin";
 
+    public User(String name, String email, String phone, String login, String password) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.login = login;
+        this.password = password;
+        lastAccess = new Date();
+    }
+
     public User(String login, String password) {
         this.login = login;
         this.password = password;
         lastAccess = new Date();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
@@ -49,10 +76,10 @@ public class User extends Person {
         this.password = password;
     }
 
-   /*
+    /*
     * @method isValid é utilizado para verificar se o login e senha do usuario são os mesmos no arquivo persistido
     * @return retorna true se o login e senha estão corretos
-    */
+     */
     public boolean isValid() {
         return this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD);
     }
