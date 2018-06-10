@@ -6,6 +6,7 @@
 package br.com.acme.gui;
 
 import br.com.acme.User;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,8 @@ public class MainWindowForm extends javax.swing.JFrame {
      * Creates new form MainWindowForm
      */
     public MainWindowForm(LoginForm loginForm, User user) {
+        //import java.awt.Toolkit;
+        //Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/books.png"))
         this.user = user;
         this.loginForm = loginForm;
         initComponents();
@@ -69,6 +72,7 @@ public class MainWindowForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Academic Library Control System");
         setBackground(new java.awt.Color(219, 219, 219));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/books.png")));
         setResizable(false);
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
