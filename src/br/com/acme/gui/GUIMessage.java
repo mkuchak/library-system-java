@@ -12,6 +12,10 @@ public class GUIMessage {
         JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.OK_OPTION);
     }
 
+    public static int action() {
+        return JOptionPane.showConfirmDialog(null, "Are you sure you want proceed with this action?", "Action", JOptionPane.YES_NO_OPTION);
+    }
+
     public static int exit() {
         return JOptionPane.showConfirmDialog(null, "Do you really want to leave?", "Exit", JOptionPane.YES_NO_OPTION);
     }
