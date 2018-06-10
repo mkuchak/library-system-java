@@ -156,16 +156,12 @@ public class CreateAccountForm extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-           
-        
+
     }//GEN-LAST:event_jbCloseActionPerformed
-=======
     private void jbCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCreateActionPerformed
 
     }//GEN-LAST:event_jbCreateActionPerformed
->>>>>>> 20d9b66b18e40c36a5985893bc9ffe884558e1ec
 
     /**
      * @param args the command line arguments
