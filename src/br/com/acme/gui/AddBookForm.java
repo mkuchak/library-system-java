@@ -5,8 +5,11 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.AcademicLibrary;
 import java.awt.Frame;
 import br.com.acme.Author;
+import br.com.acme.Book;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,12 +20,15 @@ public class AddBookForm extends javax.swing.JDialog {
 
     private final Frame MainWindowForm;
     private List<Author> authors;
+    private AcademicLibrary library;
 
     /**
      * Creates new form Book
      */
     public AddBookForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        ArrayList<Author> authors;
+        //library = ALManager.getInstance();
         this.MainWindowForm = parent;
         initComponents();
     }
@@ -210,10 +216,31 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
-        //validar e depois adicionar o objeto
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        String title = jtfTitle.getText();
+        String year = jtfYear.getText();
+        String volume = jtfVolume.getText();
+        String language = jtfLanguage.getText();
+        String isbn = jtfIsbn.getText();
+        String pages = jtfPages.getText();
+        
+        //b.setAuthors(authors);
+        Book b = new Book(jtfLanguage.getText(), Long.parseLong(jtfIsbn.getText()), Short.parseShort(jtfPages.getText()), jtfTitle.getText(), Short.parseShort(jtfYear.getText()), Byte.parseByte(jtfVolume.getText()));            
+         
+        this.library.addPublication(b);
+        
+        GUIMessage.info("BOOK adicionado com sucesso");
+        clearComponents();
+
     }//GEN-LAST:event_jbOkActionPerformed
+
+    private void clearComponents() {
+        jtfTitle.setText("");
+        jtfYear.setText("");
+        jtfVolume.setText("");
+        jtfLanguage.setText("");
+        jtfIsbn.setText("");
+        jtfPages.setText("");
+    }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.setVisible(false);
