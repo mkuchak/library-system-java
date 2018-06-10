@@ -43,8 +43,11 @@ public class MainWindowForm extends javax.swing.JFrame {
 
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         jButton2 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
         jButton3 = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
         jButton4 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
         jlUserInfo = new javax.swing.JLabel();
@@ -93,6 +96,9 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton1);
 
+        jSeparator5.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
+        jToolBar1.add(jSeparator5);
+
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -100,12 +106,18 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton2);
 
+        jSeparator4.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
+        jToolBar1.add(jSeparator4);
+
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setName("jbmbSave"); // NOI18N
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton3);
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
+        jToolBar1.add(jSeparator3);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add-user.png"))); // NOI18N
         jButton4.setFocusable(false);
@@ -361,6 +373,9 @@ public class MainWindowForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel jlLibraryImage;
     private javax.swing.JLabel jlUserInfo;
