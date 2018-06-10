@@ -17,10 +17,10 @@ import sun.awt.resources.awt;
  */
 public class AuthorForm extends javax.swing.JDialog {
 
-    private final Frame MainWindowForm;
+ 
     //private final Dialog DMainWindowForm;
     private List<Author> authors;
-
+    private final Frame MainWindowForm;
     /**
      * Creates new form AuthorForm
      *
@@ -28,10 +28,10 @@ public class AuthorForm extends javax.swing.JDialog {
      * @param modal
      * @param authors uma lista de autores
      */
-    public AuthorForm(java.awt.Frame parent, boolean modal, List<Author> authors) {
+    public AuthorForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.MainWindowForm = parent;
+        MainWindowForm = parent;
     }
 
     /**
@@ -41,9 +41,10 @@ public class AuthorForm extends javax.swing.JDialog {
      * @param modal
      * @param authors uma lista de autores
      */
-    public AuthorForm(java.awt.Dialog parent, boolean modal, List<Author> authors) {
+    public AuthorForm(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        MainWindowForm = null;
     }
 
     /**

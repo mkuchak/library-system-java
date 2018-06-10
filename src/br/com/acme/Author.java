@@ -6,10 +6,6 @@ package br.com.acme;
  */
 public class Author extends Person {
 
-       public Author(String name, String afiliation, String email,boolean isCorrespondingAuthor) {
-        this(name, email, afiliation, isCorrespondingAuthor);
-       }
-    
     private String afiliation;
     private boolean isCorrespondingAuthor;
 
