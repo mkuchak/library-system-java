@@ -5,17 +5,22 @@
  */
 package br.com.acme.gui;
 
+import java.awt.Frame;
+
 /**
  *
  * @author Willian P
  */
 public class AddBookForm extends javax.swing.JDialog {
 
+    private final Frame MainWindowForm;
+
     /**
      * Creates new form Book
      */
     public AddBookForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.MainWindowForm = parent;
         initComponents();
     }
 
@@ -91,9 +96,19 @@ public class AddBookForm extends javax.swing.JDialog {
 
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
+        jbOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOkActionPerformed(evt);
+            }
+        });
 
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
+        jbClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,6 +205,17 @@ public class AddBookForm extends javax.swing.JDialog {
         this.setVisible(false);//esconde a tela book
 
     }//GEN-LAST:event_jbAddAuthorActionPerformed
+
+    private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+        //validar e depois adicionar o objeto
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }//GEN-LAST:event_jbOkActionPerformed
+
+    private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }//GEN-LAST:event_jbCloseActionPerformed
 
     /**
      * @param args the command line arguments

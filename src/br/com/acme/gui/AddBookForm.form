@@ -210,12 +210,18 @@
         <Property name="text" type="java.lang.String" value="OK"/>
         <Property name="name" type="java.lang.String" value="jbOk" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbOkActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbClose">
       <Properties>
         <Property name="text" type="java.lang.String" value="Close"/>
         <Property name="name" type="java.lang.String" value="jbClose" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCloseActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

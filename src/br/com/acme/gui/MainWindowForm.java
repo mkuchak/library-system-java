@@ -323,9 +323,8 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         AddBookForm book = new AddBookForm(this, true);
-
-        book.setVisible(true); //exibe o dialog do book
-        this.setVisible(false);//esconde a tela principal
+        this.setVisible(false);
+        book.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
@@ -347,7 +346,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         CreateAccountForm account = new CreateAccountForm(this, true);
         this.setVisible(false);
         account.setVisible(true);
-
     }
     /**
      * @param args the command line arguments
