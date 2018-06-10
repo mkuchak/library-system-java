@@ -139,7 +139,7 @@ public class MainWindowForm extends javax.swing.JFrame {
         jmFile.add(jSeparator1);
 
         jmiExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
-        jmiExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/exit.png"))); // NOI18N
+        jmiExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/logout.png"))); // NOI18N
         jmiExit.setText("Exit");
         jmiExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,16 +211,16 @@ public class MainWindowForm extends javax.swing.JFrame {
 
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/question.png"))); // NOI18N
         jMenuItem11.setText("Support");
-        jMenuItem11.setMaximumSize(new java.awt.Dimension(145, 31));
-        jMenuItem11.setMinimumSize(new java.awt.Dimension(145, 31));
+        jMenuItem11.setMaximumSize(new java.awt.Dimension(145, 34));
+        jMenuItem11.setMinimumSize(new java.awt.Dimension(145, 34));
         jMenuItem11.setName("jmiSupport"); // NOI18N
         jMenuItem11.setPreferredSize(new java.awt.Dimension(145, 34));
         jMenu4.add(jMenuItem11);
 
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/information.png"))); // NOI18N
         jMenuItem12.setText("About");
-        jMenuItem12.setMaximumSize(new java.awt.Dimension(145, 31));
-        jMenuItem12.setMinimumSize(new java.awt.Dimension(145, 31));
+        jMenuItem12.setMaximumSize(new java.awt.Dimension(145, 34));
+        jMenuItem12.setMinimumSize(new java.awt.Dimension(145, 34));
         jMenuItem12.setName("jmiAbout"); // NOI18N
         jMenuItem12.setPreferredSize(new java.awt.Dimension(145, 34));
         jMenu4.add(jMenuItem12);
@@ -228,8 +228,8 @@ public class MainWindowForm extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Check for updates");
         jCheckBoxMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/recycle.png"))); // NOI18N
-        jCheckBoxMenuItem1.setMaximumSize(new java.awt.Dimension(145, 31));
-        jCheckBoxMenuItem1.setMinimumSize(new java.awt.Dimension(145, 31));
+        jCheckBoxMenuItem1.setMaximumSize(new java.awt.Dimension(145, 34));
+        jCheckBoxMenuItem1.setMinimumSize(new java.awt.Dimension(145, 34));
         jCheckBoxMenuItem1.setName("jcbmiUpdate"); // NOI18N
         jCheckBoxMenuItem1.setPreferredSize(new java.awt.Dimension(145, 34));
         jMenu4.add(jCheckBoxMenuItem1);

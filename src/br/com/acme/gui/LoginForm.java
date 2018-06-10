@@ -138,19 +138,7 @@ public class LoginForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbValidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidateActionPerformed
-        String login = jtfLogin.getText().trim(); //trim remove espaço em branco da string
-        String password = new String(jpfPassword.getPassword());
-
-        User usr = new User(login, password);
-        if (usr.isValid()) { //Logged in
-            MainWindowForm form = new MainWindowForm(this, usr); //Open app
-            form.setVisible(true);
-            this.setVisible(false); //Hide login form, but mantain on memory
-            //this.dispose(); //Kill form and release from memory
-        } else { //Not logged
-            GUIMessage.info("Invalid user or password.");
-
-        }
+        validateUser();
     }//GEN-LAST:event_jbValidateActionPerformed
 
     private void jbCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelActionPerformed
@@ -164,15 +152,16 @@ public class LoginForm extends javax.swing.JDialog {
         String password = new String(jpfPassword.getPassword());
 
         User usr = new User(login, password);
-        if (usr.isValid()) {
-            MainWindowForm form = new MainWindowForm(this, usr);
-            form.setVisible(true);
+        if (usr.isValid()) { //Logged in
+            MainWindowForm form = new MainWindowForm(this, usr); //Instance app
+            this.setVisible(false); //Hide login form, but mantain on memory
+            //this.dispose(); //Kill form and release from memory
+            form.setVisible(true); //Show app
             jtfLogin.setText("");
             jpfPassword.setText("");
             jtfLogin.requestFocus();
-            this.setVisible(false);
-        } else {
-            GUIMessage.info("Invalid user access.");
+        } else { //Not logged
+            GUIMessage.info("Invalid user or password.");
         }
     }
 
