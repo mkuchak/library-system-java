@@ -26,7 +26,7 @@ public class MainWindowForm extends javax.swing.JFrame {
         this.user = user;
         this.loginForm = loginForm;
         initComponents();
-//        jlUserInfo.setText("Access: " + this.user.getLastAccess().toString());
+        jlUserInfo.setText("Last Access: " + this.user.getLastAccess().toString());
         setTitle(getTitle() + " (" + this.user.getLogin() + ")");
     }
 
@@ -44,6 +44,8 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        jlUserInfo = new javax.swing.JLabel();
         jlLibraryImage = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmFile = new javax.swing.JMenu();
@@ -110,6 +112,12 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton4.setName("jbmbCreateAccount"); // NOI18N
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton4);
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.HORIZONTAL);
+        jToolBar1.add(jSeparator2);
+
+        jlUserInfo.setText("jlUserInfo");
+        jToolBar1.add(jlUserInfo);
 
         jlLibraryImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/cover.png"))); // NOI18N
         jlLibraryImage.setMaximumSize(new java.awt.Dimension(600, 300));
@@ -296,8 +304,10 @@ public class MainWindowForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel jlLibraryImage;
+    private javax.swing.JLabel jlUserInfo;
     private javax.swing.JMenu jmFile;
     private javax.swing.JMenuItem jmiExit;
     private javax.swing.JMenuItem jmiNew;
