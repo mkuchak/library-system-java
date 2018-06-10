@@ -347,6 +347,7 @@ public class MainWindowForm extends javax.swing.JFrame {
         CreateAccountForm account = new CreateAccountForm(this, true);
         this.setVisible(false);
         account.setVisible(true);
+
     }
     /**
      * @param args the command line arguments

@@ -10,7 +10,7 @@ import br.com.acme.AcademicLibrary;
 import javax.swing.JOptionPane;
 
 import br.com.acme.User;
-
+import java.awt.Frame;
 
 /**
  *
@@ -19,6 +19,7 @@ import br.com.acme.User;
 public class CreateAccountForm extends javax.swing.JDialog {
 
     private AcademicLibrary library;
+    private Frame MainWindowForm;
 
     /**
      * Creates new form CreateAccountForm
@@ -26,6 +27,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
     public CreateAccountForm(java.awt.Frame parent, boolean modal) {
         //library = ALManager.getInstance();
         super(parent, modal);
+        this.MainWindowForm = parent;
         initComponents();
     }
 
@@ -168,10 +170,13 @@ public class CreateAccountForm extends javax.swing.JDialog {
         String login = jtfLogin.getText().trim();
         String password = jtfPassword.getText();
         User usr = new User(name, email, phone, login, password);
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCreateActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-         
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     /**
