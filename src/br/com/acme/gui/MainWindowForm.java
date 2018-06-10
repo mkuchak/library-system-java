@@ -6,8 +6,10 @@
 package br.com.acme.gui;
 
 import br.com.acme.User;
+import java.awt.Desktop;
 import java.awt.Toolkit; //Window Icon: Add this import > jFrame properties > iconImage > Custom Code > add changing class name: Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/common/books.png"))
 import java.awt.event.KeyEvent;
+import java.net.URL;
 import javax.swing.JOptionPane;
 
 /**
@@ -219,6 +221,11 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuItem11.setMinimumSize(new java.awt.Dimension(165, 34));
         jMenuItem11.setName("jmiSupport"); // NOI18N
         jMenuItem11.setPreferredSize(new java.awt.Dimension(165, 34));
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem11);
 
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/information.png"))); // NOI18N
@@ -275,6 +282,14 @@ public class MainWindowForm extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_jmiExitActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URL("https://github.com/mkuchak/library-system-java/issues").toURI());
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments
