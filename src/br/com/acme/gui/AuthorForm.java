@@ -6,6 +6,7 @@
 package br.com.acme.gui;
 
 import br.com.acme.Author;
+import java.awt.Frame;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  * @author Willian
  */
 public class AuthorForm extends javax.swing.JDialog {
-    
+    private final Frame MainWindowForm;
     private List<Author> authors;
     /**
      * Creates new form AuthorForm
@@ -96,6 +97,11 @@ public class AuthorForm extends javax.swing.JDialog {
 
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
+        jbOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOkActionPerformed(evt);
+            }
+        });
 
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
@@ -178,6 +184,17 @@ public class AuthorForm extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxAfiliationActionPerformed
 
+    private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+        
+        //Author author = new Author(jtxName.getText(), jtxAfiliation.getText(), jtfEmail.getText(), jcblsCorresponding.isSelected());
+        
+    }//GEN-LAST:event_jbOkActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }
+    
     /**
      * @param args the command line arguments
      */

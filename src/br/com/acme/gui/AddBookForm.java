@@ -216,12 +216,12 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
-        String title = jtfTitle.getText();
-        String year = jtfYear.getText();
-        String volume = jtfVolume.getText();
-        String language = jtfLanguage.getText();
-        String isbn = jtfIsbn.getText();
-        String pages = jtfPages.getText();
+//        String title = jtfTitle.getText();
+//        String year = jtfYear.getText();
+//        String volume = jtfVolume.getText();
+//        String language = jtfLanguage.getText();
+//        String isbn = jtfIsbn.getText();
+//        String pages = jtfPages.getText();
         
         //b.setAuthors(authors);
         Book b = new Book(jtfLanguage.getText(), Long.parseLong(jtfIsbn.getText()), Short.parseShort(jtfPages.getText()), jtfTitle.getText(), Short.parseShort(jtfYear.getText()), Byte.parseByte(jtfVolume.getText()));            
