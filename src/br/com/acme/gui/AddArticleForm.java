@@ -224,9 +224,9 @@ public class AddArticleForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
-      //  AuthorForm author = new AuthorForm(this, true);
-        
-        
+      AuthorForm author = new AuthorForm(this, true);
+        author.setVisible(true);
+        this.setVisible(false);        
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     /**

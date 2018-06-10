@@ -184,8 +184,8 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jtfLanguageActionPerformed
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
-       // AuthorForm author = new AuthorForm(this, true);
-           // author.setVisible(true); //exibe o dialog do author
+       AuthorForm author = new AuthorForm(this, true);
+            author.setVisible(true); //exibe o dialog do author
             this.setVisible(false);//esconde a tela book
         
     }//GEN-LAST:event_jbAddAuthorActionPerformed

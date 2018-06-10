@@ -19,6 +19,10 @@ public class AuthorForm extends javax.swing.JDialog {
         initComponents();
     }
 
+        public AuthorForm(java.awt.Dialog parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

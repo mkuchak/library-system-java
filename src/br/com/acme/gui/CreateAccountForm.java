@@ -171,8 +171,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbCreateActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-
-        
+         
     }//GEN-LAST:event_jbCloseActionPerformed
 
     /**
