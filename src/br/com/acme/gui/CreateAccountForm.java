@@ -20,7 +20,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
     public CreateAccountForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-            }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,7 +34,6 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jtfName = new javax.swing.JTextField();
         jtfEmail = new javax.swing.JTextField();
-        jtfPhone = new javax.swing.JTextField();
         jtfLogin = new javax.swing.JTextField();
         jtfPassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -44,6 +43,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jbCreate = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
+        jtfPhone = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("User");
@@ -54,8 +54,6 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jtfName.setName("jtfName"); // NOI18N
 
         jtfEmail.setName("jtfEmail"); // NOI18N
-
-        jtfPhone.setName("jtfPhone"); // NOI18N
 
         jtfLogin.setName("jtfLogin"); // NOI18N
 
@@ -74,6 +72,17 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jbCreate.setText("Create");
 
         jbClose.setText("Close");
+        jbClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCloseActionPerformed(evt);
+            }
+        });
+
+        try {
+            jtfPhone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,9 +109,9 @@ public class CreateAccountForm extends javax.swing.JDialog {
                                 .addComponent(jbClose, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jtfName, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                             .addComponent(jtfEmail)
-                            .addComponent(jtfPhone)
                             .addComponent(jtfLogin)
-                            .addComponent(jtfPassword))))
+                            .addComponent(jtfPassword)
+                            .addComponent(jtfPhone))))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,27 +127,32 @@ public class CreateAccountForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jtfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jtfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbCreate)
                     .addComponent(jbClose))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
+           
+        
+    }//GEN-LAST:event_jbCloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +172,6 @@ public class CreateAccountForm extends javax.swing.JDialog {
     private javax.swing.JTextField jtfLogin;
     private javax.swing.JTextField jtfName;
     private javax.swing.JTextField jtfPassword;
-    private javax.swing.JTextField jtfPhone;
+    private javax.swing.JFormattedTextField jtfPhone;
     // End of variables declaration//GEN-END:variables
 }

@@ -112,6 +112,11 @@ public class MainWindowForm extends javax.swing.JFrame {
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setName("jbmbCreateAccount"); // NOI18N
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton4);
         jToolBar1.add(jSeparator2);
 
@@ -319,11 +324,18 @@ public class MainWindowForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        CreateAccountForm account = new CreateAccountForm(this, true);
-        account.setVisible(true);
-        this.setVisible(false);
+        createUserForm();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        createUserForm();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void createUserForm(){
+        CreateAccountForm account = new CreateAccountForm(this, true);
+        account.setVisible(true);
+        this.setVisible(false); 
+    }
     /**
      * @param args the command line arguments
      */
