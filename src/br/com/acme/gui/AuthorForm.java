@@ -6,35 +6,45 @@
 package br.com.acme.gui;
 
 import br.com.acme.Author;
+import java.awt.Dialog;
+import java.awt.Frame;
 import java.util.List;
+import sun.awt.resources.awt;
 
 /**
  *
  * @author Willian
  */
 public class AuthorForm extends javax.swing.JDialog {
-    
+
+ 
+    //private final Dialog DMainWindowForm;
     private List<Author> authors;
+    private final Frame MainWindowForm;
     /**
      * Creates new form AuthorForm
+     *
      * @param parent é passado um frame
      * @param modal
      * @param authors uma lista de autores
      */
-    public AuthorForm(java.awt.Frame parent, boolean modal, List<Author> authors) {
+    public AuthorForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        MainWindowForm = parent;
     }
 
-     /**
+    /**
      * Creates new form AuthorForm
+     *
      * @param parent é passado um Dialog
      * @param modal
      * @param authors uma lista de autores
      */
-    public AuthorForm(java.awt.Dialog parent, boolean modal, List<Author> authors) {
+    public AuthorForm(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        MainWindowForm = null;
     }
 
     /**
@@ -96,6 +106,11 @@ public class AuthorForm extends javax.swing.JDialog {
 
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
+        jbOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOkActionPerformed(evt);
+            }
+        });
 
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
@@ -177,6 +192,17 @@ public class AuthorForm extends javax.swing.JDialog {
     private void jtxAfiliationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxAfiliationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxAfiliationActionPerformed
+
+    private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+
+        //Author author = new Author(jtxName.getText(), jtxAfiliation.getText(), jtfEmail.getText(), jcblsCorresponding.isSelected());
+
+    }//GEN-LAST:event_jbOkActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }
 
     /**
      * @param args the command line arguments
