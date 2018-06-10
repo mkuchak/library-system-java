@@ -81,7 +81,14 @@ public class User extends Person {
     * @return retorna true se o login e senha estão corretos
      */
     public boolean isValid() {
-        return this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD);
+        //return this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD);
+        if (this.login.equalsIgnoreCase(login) && this.password.equalsIgnoreCase(password)) {
+            return true;
+        }
+        if (this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD)) {
+            return true;
+        }
+        return false;
     }
 
 }

@@ -171,10 +171,46 @@ public class CreateAccountForm extends javax.swing.JDialog {
         String phone = jtfPhone.getText();
         String login = jtfLogin.getText().trim();
         String password = jtfPassword.getText();
+        if (!validateForm().isEmpty()) {
+            GUIMessage.error(validateForm());
+            return;
+        }
         User usr = new User(name, email, phone, login, password);
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        clearForm();
+        GUIMessage.info("User added successfully.");
     }//GEN-LAST:event_jbCreateActionPerformed
+
+    private String validateForm() {
+        String name = jtfName.getText();
+        String email = jtfEmail.getText();
+        String phone = jtfPhone.getText();
+        String login = jtfLogin.getText().trim();
+        String password = jtfPassword.getText();
+        if (name.isEmpty()) {
+            return "The name field can not be null.";
+        }
+        if (email.isEmpty()) {
+            return "The e-mail field can not be null.";
+        }
+        if ("(  )      -    ".equals(phone)) {
+            return "The phone field can not be null.";
+        }
+        if (login.isEmpty()) {
+            return "The login field can not be null.";
+        }
+        if (password.isEmpty()) {
+            return "The password field can not be null.";
+        }
+        return "";
+    }
+
+    private void clearForm() {
+        jtfName.setText("");
+        jtfEmail.setText("");
+        jtfPhone.setText("");
+        jtfLogin.setText("");
+        jtfPassword.setText("");
+    }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.setVisible(false);

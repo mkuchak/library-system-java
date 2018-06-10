@@ -5,7 +5,11 @@ import javax.swing.JOptionPane;
 public class GUIMessage {
 
     public static void info(String msg) {
-        JOptionPane.showMessageDialog(null, msg, "Info", JOptionPane.OK_OPTION);
+        JOptionPane.showMessageDialog(null, msg, "Info", JOptionPane.YES_NO_CANCEL_OPTION);
+    }
+
+    public static void error(String msg) {
+        JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.OK_OPTION);
     }
 
     public static int exit() {

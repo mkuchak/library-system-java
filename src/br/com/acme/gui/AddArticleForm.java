@@ -5,17 +5,22 @@
  */
 package br.com.acme.gui;
 
+import java.awt.Frame;
+
 /**
  *
  * @author Willian
  */
 public class AddArticleForm extends javax.swing.JDialog {
 
+    private final Frame MainWindowForm;
+
     /**
      * Creates new form AddArticleForm
      */
     public AddArticleForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.MainWindowForm = parent;
         initComponents();
     }
 
@@ -94,9 +99,19 @@ public class AddArticleForm extends javax.swing.JDialog {
 
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
+        jbOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOkActionPerformed(evt);
+            }
+        });
 
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
+        jbClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCloseActionPerformed(evt);
+            }
+        });
 
         jPanel1.setToolTipText("");
         jPanel1.setName("jpJournal"); // NOI18N
@@ -230,6 +245,17 @@ public class AddArticleForm extends javax.swing.JDialog {
         author.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbAddAuthorActionPerformed
+
+    private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+        //validar e adicionar objeto
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }//GEN-LAST:event_jbOkActionPerformed
+
+    private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }//GEN-LAST:event_jbCloseActionPerformed
 
     /**
      * @param args the command line arguments

@@ -329,8 +329,8 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         AddArticleForm article = new AddArticleForm(this, true);
-        article.setVisible(true);
         this.setVisible(false);
+        article.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
