@@ -222,6 +222,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jtfPhone.setText("");
         jtfLogin.setText("");
         jpfPassword.setText("");
+        jpfPasswordConfirm.setText("");
     }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
