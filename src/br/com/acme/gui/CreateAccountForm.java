@@ -5,10 +5,9 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.ALManager;
 import br.com.acme.AcademicLibrary;
-
 import javax.swing.JOptionPane;
-
 import br.com.acme.User;
 import java.awt.Frame;
 
@@ -25,8 +24,8 @@ public class CreateAccountForm extends javax.swing.JDialog {
      * Creates new form CreateAccountForm
      */
     public CreateAccountForm(java.awt.Frame parent, boolean modal) {
-        //library = ALManager.getInstance();
         super(parent, modal);
+        this.library = ALManager.getInstance();
         this.MainWindowForm = parent;
         initComponents();
     }
@@ -189,6 +188,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
             return;
         }
         User usr = new User(name, email, phone, login, password);
+        library.addUsers(usr);
         clearForm();
         GUIMessage.info("User added successfully.");
     }//GEN-LAST:event_jbCreateActionPerformed

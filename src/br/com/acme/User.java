@@ -1,5 +1,6 @@
 package br.com.acme;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,6 +15,7 @@ public class User extends Person {
     private String login;
     private String password;
     private Date lastAccess;
+    private AcademicLibrary libray;
     private final String LOGIN = "admin";
     private final String PASSWORD = "admin";
 
@@ -27,6 +29,7 @@ public class User extends Person {
     }
 
     public User(String login, String password) {
+        libray = ALManager.getInstance();
         this.login = login;
         this.password = password;
         lastAccess = new Date();
@@ -81,12 +84,13 @@ public class User extends Person {
     * @return retorna true se o login e senha estão corretos
      */
     public boolean isValid() {
-        //return this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD);
-        if (this.login.equalsIgnoreCase(login) && this.password.equalsIgnoreCase(password)) {
-            return true;
-        }
         if (this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD)) {
             return true;
+        }
+        for (User usr : libray.getUsers()) {
+            if (this.login.equalsIgnoreCase(usr.getLogin()) && this.password.equalsIgnoreCase(usr.getPassword())) {
+                return true;
+            }
         }
         return false;
     }
