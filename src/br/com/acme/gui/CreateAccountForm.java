@@ -6,7 +6,11 @@
 package br.com.acme.gui;
 
 import br.com.acme.AcademicLibrary;
+
+import javax.swing.JOptionPane;
+
 import br.com.acme.User;
+
 
 /**
  *
@@ -167,7 +171,8 @@ public class CreateAccountForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbCreateActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        //this.dispose();
+
+        
     }//GEN-LAST:event_jbCloseActionPerformed
 
     /**
