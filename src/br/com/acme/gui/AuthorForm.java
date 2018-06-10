@@ -5,21 +5,34 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.Author;
+import java.util.List;
+
 /**
  *
  * @author Willian
  */
 public class AuthorForm extends javax.swing.JDialog {
-
+    
+    private List<Author> authors;
     /**
      * Creates new form AuthorForm
+     * @param parent é passado um frame
+     * @param modal
+     * @param authors uma lista de autores
      */
-    public AuthorForm(java.awt.Frame parent, boolean modal) {
+    public AuthorForm(java.awt.Frame parent, boolean modal, List<Author> authors) {
         super(parent, modal);
         initComponents();
     }
 
-    public AuthorForm(java.awt.Dialog parent, boolean modal) {
+     /**
+     * Creates new form AuthorForm
+     * @param parent é passado um Dialog
+     * @param modal
+     * @param authors uma lista de autores
+     */
+    public AuthorForm(java.awt.Dialog parent, boolean modal, List<Author> authors) {
         super(parent, modal);
         initComponents();
     }
