@@ -211,27 +211,27 @@ public class MainWindowForm extends javax.swing.JFrame {
 
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/question.png"))); // NOI18N
         jMenuItem11.setText("Support");
-        jMenuItem11.setMaximumSize(new java.awt.Dimension(145, 34));
-        jMenuItem11.setMinimumSize(new java.awt.Dimension(145, 34));
+        jMenuItem11.setMaximumSize(new java.awt.Dimension(165, 34));
+        jMenuItem11.setMinimumSize(new java.awt.Dimension(165, 34));
         jMenuItem11.setName("jmiSupport"); // NOI18N
-        jMenuItem11.setPreferredSize(new java.awt.Dimension(145, 34));
+        jMenuItem11.setPreferredSize(new java.awt.Dimension(165, 34));
         jMenu4.add(jMenuItem11);
 
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/information.png"))); // NOI18N
         jMenuItem12.setText("About");
-        jMenuItem12.setMaximumSize(new java.awt.Dimension(145, 34));
-        jMenuItem12.setMinimumSize(new java.awt.Dimension(145, 34));
+        jMenuItem12.setMaximumSize(new java.awt.Dimension(165, 34));
+        jMenuItem12.setMinimumSize(new java.awt.Dimension(165, 34));
         jMenuItem12.setName("jmiAbout"); // NOI18N
-        jMenuItem12.setPreferredSize(new java.awt.Dimension(145, 34));
+        jMenuItem12.setPreferredSize(new java.awt.Dimension(165, 34));
         jMenu4.add(jMenuItem12);
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Check for updates");
         jCheckBoxMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/recycle.png"))); // NOI18N
-        jCheckBoxMenuItem1.setMaximumSize(new java.awt.Dimension(145, 34));
-        jCheckBoxMenuItem1.setMinimumSize(new java.awt.Dimension(145, 34));
+        jCheckBoxMenuItem1.setMaximumSize(new java.awt.Dimension(165, 34));
+        jCheckBoxMenuItem1.setMinimumSize(new java.awt.Dimension(165, 34));
         jCheckBoxMenuItem1.setName("jcbmiUpdate"); // NOI18N
-        jCheckBoxMenuItem1.setPreferredSize(new java.awt.Dimension(145, 34));
+        jCheckBoxMenuItem1.setPreferredSize(new java.awt.Dimension(165, 34));
         jMenu4.add(jCheckBoxMenuItem1);
 
         jMenuBar1.add(jMenu4);
