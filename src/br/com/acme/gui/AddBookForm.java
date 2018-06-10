@@ -5,12 +5,9 @@
  */
 package br.com.acme.gui;
 
-<<<<<<< HEAD
 import java.awt.Frame;
-=======
 import br.com.acme.Author;
 import java.util.List;
->>>>>>> 20c0404237068d977056cc847b4e2a5cceb3be48
 
 /**
  *
@@ -18,13 +15,9 @@ import java.util.List;
  */
 public class AddBookForm extends javax.swing.JDialog {
 
-<<<<<<< HEAD
     private final Frame MainWindowForm;
+    private List<Author> authors;
 
-=======
-        private List<Author> authors;
-    
->>>>>>> 20c0404237068d977056cc847b4e2a5cceb3be48
     /**
      * Creates new form Book
      */
