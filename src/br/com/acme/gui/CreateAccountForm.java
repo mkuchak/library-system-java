@@ -44,7 +44,6 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jtfName = new javax.swing.JTextField();
         jtfEmail = new javax.swing.JTextField();
         jtfLogin = new javax.swing.JTextField();
-        jtfPassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -53,6 +52,9 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jbCreate = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
         jtfPhone = new javax.swing.JFormattedTextField();
+        jpfPassword = new javax.swing.JPasswordField();
+        jpfPasswordConfirm = new javax.swing.JPasswordField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("User");
@@ -66,8 +68,6 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jtfEmail.setName("jtfEmail"); // NOI18N
 
         jtfLogin.setName("jtfLogin"); // NOI18N
-
-        jtfPassword.setName("jtfPassword"); // NOI18N
 
         jLabel2.setText("Name: ");
 
@@ -99,6 +99,8 @@ public class CreateAccountForm extends javax.swing.JDialog {
             ex.printStackTrace();
         }
 
+        jLabel7.setText("Confirm Password:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,36 +111,38 @@ public class CreateAccountForm extends javax.swing.JDialog {
                         .addGap(155, 155, 155)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtfName)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jbClose, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jtfName, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                             .addComponent(jtfEmail)
                             .addComponent(jtfLogin)
-                            .addComponent(jtfPassword)
-                            .addComponent(jtfPhone))))
-                .addContainerGap(92, Short.MAX_VALUE))
+                            .addComponent(jtfPhone)
+                            .addComponent(jpfPassword)
+                            .addComponent(jpfPasswordConfirm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -151,14 +155,18 @@ public class CreateAccountForm extends javax.swing.JDialog {
                     .addComponent(jtfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jpfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpfPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbCreate)
                     .addComponent(jbClose))
-                .addGap(44, 44, 44))
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -170,7 +178,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
         String email = jtfEmail.getText();
         String phone = jtfPhone.getText();
         String login = jtfLogin.getText().trim();
-        String password = jtfPassword.getText();
+        String password = jpfPassword.getText();
         if (!validateForm().isEmpty()) {
             GUIMessage.error(validateForm());
             return;
@@ -185,7 +193,8 @@ public class CreateAccountForm extends javax.swing.JDialog {
         String email = jtfEmail.getText();
         String phone = jtfPhone.getText();
         String login = jtfLogin.getText().trim();
-        String password = jtfPassword.getText();
+        String password = jpfPassword.getText();
+        String confirmPassword = jpfPasswordConfirm.getText();
         if (name.isEmpty()) {
             return "The name field can not be null.";
         }
@@ -201,6 +210,9 @@ public class CreateAccountForm extends javax.swing.JDialog {
         if (password.isEmpty()) {
             return "The password field can not be null.";
         }
+        if (!password.equals(confirmPassword)) {
+            return "The confirm password must be identical as password field.";
+        }
         return "";
     }
 
@@ -209,7 +221,7 @@ public class CreateAccountForm extends javax.swing.JDialog {
         jtfEmail.setText("");
         jtfPhone.setText("");
         jtfLogin.setText("");
-        jtfPassword.setText("");
+        jpfPassword.setText("");
     }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
@@ -227,12 +239,14 @@ public class CreateAccountForm extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbCreate;
+    private javax.swing.JPasswordField jpfPassword;
+    private javax.swing.JPasswordField jpfPasswordConfirm;
     private javax.swing.JTextField jtfEmail;
     private javax.swing.JTextField jtfLogin;
     private javax.swing.JTextField jtfName;
-    private javax.swing.JTextField jtfPassword;
     private javax.swing.JFormattedTextField jtfPhone;
     // End of variables declaration//GEN-END:variables
 }
