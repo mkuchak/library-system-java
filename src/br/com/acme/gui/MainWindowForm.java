@@ -112,9 +112,6 @@ public class MainWindowForm extends javax.swing.JFrame {
         jToolBar1.add(jButton4);
 
         jlLibraryImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/cover.png"))); // NOI18N
-        jlLibraryImage.setMaximumSize(new java.awt.Dimension(600, 300));
-        jlLibraryImage.setMinimumSize(new java.awt.Dimension(600, 300));
-        jlLibraryImage.setPreferredSize(new java.awt.Dimension(600, 300));
 
         jMenuBar1.setName("jmbMenu"); // NOI18N
 
@@ -243,14 +240,14 @@ public class MainWindowForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jlLibraryImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jlLibraryImage)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlLibraryImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlLibraryImage)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
