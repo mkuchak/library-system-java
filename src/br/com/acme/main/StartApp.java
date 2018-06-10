@@ -1,16 +1,16 @@
 package br.com.acme.main;
 
 import br.com.acme.gui.LoginForm;
-import javax.swing.UIManager;
+//import javax.swing.UIManager;
 
 public class StartApp {
 
     public static void main(String[] args) {
-        try {
+        /*try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception ex) {
             //ignored
-        }
+        }*/
         LoginForm form = new LoginForm();
         form.setVisible(true);
     }

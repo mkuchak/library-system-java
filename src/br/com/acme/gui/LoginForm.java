@@ -63,12 +63,14 @@ public class LoginForm extends javax.swing.JDialog {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/door-key.png"))); // NOI18N
         jLabel2.setText("Password:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/unlocked.png"))); // NOI18N
         jLabel3.setText("Login:");
 
-        jbValidate.setText("Validate");
+        jbValidate.setText("Login");
         jbValidate.setName("jbValidate"); // NOI18N
         jbValidate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +91,7 @@ public class LoginForm extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -109,7 +111,7 @@ public class LoginForm extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +130,7 @@ public class LoginForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbValidate)
                     .addComponent(jbCancel))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -140,16 +142,13 @@ public class LoginForm extends javax.swing.JDialog {
         String password = new String(jpfPassword.getPassword());
 
         User usr = new User(login, password);
-        if (usr.isValid()) {
-            //Abrir Aplicação
-            MainWindowForm form = new MainWindowForm(this, usr);
+        if (usr.isValid()) { //Logged in
+            MainWindowForm form = new MainWindowForm(this, usr); //Open app
             form.setVisible(true);
-            this.setVisible(false); //esconde e continua usando memória
-            //this.dispose();
-            System.out.println("sim");
-        } else {
-            System.out.println("nao");
-            GUIMessage.info("Usuário de acesso inválido.");
+            this.setVisible(false); //Hide login form, but mantain on memory
+            //this.dispose(); //Kill form and release from memory
+        } else { //Not logged
+            GUIMessage.info("Invalid user or password.");
 
         }
     }//GEN-LAST:event_jbValidateActionPerformed
@@ -161,19 +160,17 @@ public class LoginForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbCancelActionPerformed
 
     private void validateUser() {
-        String login = jtfLogin.getText().trim(); //trim remove espaço em branco da string
+        String login = jtfLogin.getText().trim(); //Trim remove string spaces
         String password = new String(jpfPassword.getPassword());
 
         User usr = new User(login, password);
         if (usr.isValid()) {
-            //Abrir Aplicação
             MainWindowForm form = new MainWindowForm(this, usr);
             form.setVisible(true);
             jtfLogin.setText("");
             jpfPassword.setText("");
             jtfLogin.requestFocus();
-            this.setVisible(false); //esconde e continua usando memória
-            //this.dispose();
+            this.setVisible(false);
         } else {
             GUIMessage.info("Invalid user access.");
         }

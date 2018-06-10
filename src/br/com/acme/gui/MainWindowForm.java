@@ -6,7 +6,7 @@
 package br.com.acme.gui;
 
 import br.com.acme.User;
-import java.awt.Toolkit;
+import java.awt.Toolkit; //Window Icon: Add this import > jFrame properties > iconImage > Custom Code > add changing class name: Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/common/books.png"))
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
@@ -23,8 +23,6 @@ public class MainWindowForm extends javax.swing.JFrame {
      * Creates new form MainWindowForm
      */
     public MainWindowForm(LoginForm loginForm, User user) {
-        //import java.awt.Toolkit;
-        //Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/books.png"))
         this.user = user;
         this.loginForm = loginForm;
         initComponents();
@@ -66,13 +64,14 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Academic Library Control System");
         setBackground(new java.awt.Color(219, 219, 219));
-        setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/books.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/common/books.png")));
+        setPreferredSize(new java.awt.Dimension(600, 390));
         setResizable(false);
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -84,52 +83,55 @@ public class MainWindowForm extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
         jToolBar1.setName("jtbMenu"); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/page_white.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document3.png"))); // NOI18N
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setName("jbmbNew"); // NOI18N
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton1);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/folder.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setName("jbmbOpen"); // NOI18N
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton2);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/page_save.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setName("jbmbSave"); // NOI18N
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton3);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/user_add.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add-user.png"))); // NOI18N
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setName("jbmbCreateAccount"); // NOI18N
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton4);
 
-        jlLibraryImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/library.jpg"))); // NOI18N
+        jlLibraryImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/cover.png"))); // NOI18N
+        jlLibraryImage.setMaximumSize(new java.awt.Dimension(600, 300));
+        jlLibraryImage.setMinimumSize(new java.awt.Dimension(600, 300));
+        jlLibraryImage.setPreferredSize(new java.awt.Dimension(600, 300));
 
         jMenuBar1.setName("jmbMenu"); // NOI18N
 
         jmFile.setText("File");
 
         jmiNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        jmiNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/page_white.png"))); // NOI18N
+        jmiNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document3.png"))); // NOI18N
         jmiNew.setText("New");
         jmFile.add(jmiNew);
 
         jmiOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        jmiOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/folder.png"))); // NOI18N
+        jmiOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
         jmiOpen.setText("Open");
         jmFile.add(jmiOpen);
 
         jmiSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jmiSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/disk.png"))); // NOI18N
+        jmiSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
         jmiSave.setText("Save");
         jmFile.add(jmiSave);
 
@@ -137,7 +139,7 @@ public class MainWindowForm extends javax.swing.JFrame {
         jmFile.add(jSeparator1);
 
         jmiExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
-        jmiExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/door.png"))); // NOI18N
+        jmiExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/exit.png"))); // NOI18N
         jmiExit.setText("Exit");
         jmiExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,30 +152,36 @@ public class MainWindowForm extends javax.swing.JFrame {
 
         jMenu2.setText("Publications");
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/all/book_add.png"))); // NOI18N
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add.png"))); // NOI18N
         jMenu5.setText("Add");
         jMenu5.setName("jmAdd"); // NOI18N
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/open-book.png"))); // NOI18N
         jMenuItem6.setText("Book");
         jMenuItem6.setName("jmiAddBook"); // NOI18N
         jMenu5.add(jMenuItem6);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document.png"))); // NOI18N
         jMenuItem9.setText("Article");
         jMenuItem9.setName("jmiAddArticle"); // NOI18N
         jMenu5.add(jMenuItem9);
 
         jMenu2.add(jMenu5);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/all/table.png"))); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/telephone.png"))); // NOI18N
         jMenu6.setText("List");
         jMenu6.setName("jmList"); // NOI18N
 
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/open-book.png"))); // NOI18N
         jMenuItem7.setText("Books");
         jMenuItem7.setName("jmiListBooks"); // NOI18N
         jMenu6.add(jMenuItem7);
 
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document.png"))); // NOI18N
         jMenuItem8.setText("Articles");
         jMenuItem8.setName("jmiListArticles"); // NOI18N
         jMenu6.add(jMenuItem8);
@@ -184,12 +192,14 @@ public class MainWindowForm extends javax.swing.JFrame {
 
         jMenu3.setText("Accounts");
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/all/user_add.png"))); // NOI18N
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add-user.png"))); // NOI18N
         jMenuItem5.setText("Create");
         jMenuItem5.setName("jmiCreate"); // NOI18N
         jMenu3.add(jMenuItem5);
 
-        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/all/table.png"))); // NOI18N
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/user.png"))); // NOI18N
         jMenuItem10.setText("List Accounts");
         jMenuItem10.setName("jmiListAccounts"); // NOI18N
         jMenu3.add(jMenuItem10);
@@ -197,21 +207,32 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Help");
+        jMenu4.setToolTipText("");
 
-        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/all/help.png"))); // NOI18N
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/question.png"))); // NOI18N
         jMenuItem11.setText("Support");
+        jMenuItem11.setMaximumSize(new java.awt.Dimension(145, 31));
+        jMenuItem11.setMinimumSize(new java.awt.Dimension(145, 31));
         jMenuItem11.setName("jmiSupport"); // NOI18N
+        jMenuItem11.setPreferredSize(new java.awt.Dimension(145, 34));
         jMenu4.add(jMenuItem11);
+
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/information.png"))); // NOI18N
+        jMenuItem12.setText("About");
+        jMenuItem12.setMaximumSize(new java.awt.Dimension(145, 31));
+        jMenuItem12.setMinimumSize(new java.awt.Dimension(145, 31));
+        jMenuItem12.setName("jmiAbout"); // NOI18N
+        jMenuItem12.setPreferredSize(new java.awt.Dimension(145, 34));
+        jMenu4.add(jMenuItem12);
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Check for updates");
+        jCheckBoxMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/recycle.png"))); // NOI18N
+        jCheckBoxMenuItem1.setMaximumSize(new java.awt.Dimension(145, 31));
+        jCheckBoxMenuItem1.setMinimumSize(new java.awt.Dimension(145, 31));
         jCheckBoxMenuItem1.setName("jcbmiUpdate"); // NOI18N
+        jCheckBoxMenuItem1.setPreferredSize(new java.awt.Dimension(145, 34));
         jMenu4.add(jCheckBoxMenuItem1);
-
-        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/all/asterisk_yellow.png"))); // NOI18N
-        jMenuItem12.setText("About");
-        jMenuItem12.setName("jmiAbout"); // NOI18N
-        jMenu4.add(jMenuItem12);
 
         jMenuBar1.add(jMenu4);
 
@@ -222,14 +243,15 @@ public class MainWindowForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jlLibraryImage, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jlLibraryImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlLibraryImage))
+                .addComponent(jlLibraryImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
