@@ -5,12 +5,17 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.Author;
+import java.util.List;
+
 /**
  *
  * @author Willian P
  */
 public class AddBookForm extends javax.swing.JDialog {
 
+        private List<Author> authors;
+    
     /**
      * Creates new form Book
      */
