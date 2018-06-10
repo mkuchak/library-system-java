@@ -343,10 +343,10 @@ public class MainWindowForm extends javax.swing.JFrame {
         createUserForm();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void createUserForm(){
+    private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
+        this.setVisible(false);
         account.setVisible(true);
-        this.setVisible(false); 
     }
     /**
      * @param args the command line arguments
