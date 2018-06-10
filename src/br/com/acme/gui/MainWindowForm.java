@@ -228,10 +228,15 @@ public class MainWindowForm extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem5);
 
-        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/user.png"))); // NOI18N
         jMenuItem10.setText("List Accounts");
         jMenuItem10.setName("jmiListAccounts"); // NOI18N
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuBar1.add(jMenu3);
@@ -318,13 +323,13 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         AddBookForm book = new AddBookForm(this, true);
-       // this.setVisible(false);
+        // this.setVisible(false);
         book.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         AddArticleForm article = new AddArticleForm(this, true);
-       // this.setVisible(false);
+        // this.setVisible(false);
         article.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -337,14 +342,18 @@ public class MainWindowForm extends javax.swing.JFrame {
         createUserForm();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        AccountListForm accountList = new AccountListForm(this, true);
+        // this.setVisible(false);
+        accountList.setVisible(true);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
         //this.setVisible(false);
         account.setVisible(true);
     }
-    /**
-     * @param args the command line arguments
-     */
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

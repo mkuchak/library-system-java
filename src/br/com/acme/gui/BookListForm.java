@@ -9,12 +9,12 @@ package br.com.acme.gui;
  *
  * @author Marcos Kuchak Filho
  */
-public class BookList extends javax.swing.JFrame {
+public class BookListForm extends javax.swing.JFrame {
 
     /**
      * Creates new form BookList
      */
-    public BookList() {
+    public BookListForm() {
         initComponents();
     }
 
