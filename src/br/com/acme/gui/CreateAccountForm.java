@@ -6,7 +6,11 @@
 package br.com.acme.gui;
 
 import br.com.acme.AcademicLibrary;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
+=======
+import br.com.acme.User;
+>>>>>>> 157a082351fe5a244c60a6fa2ebf36a2c73f6865
 
 /**
  *
@@ -158,7 +162,12 @@ public class CreateAccountForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCreateActionPerformed
-
+        String name = jtfName.getText();
+        String email = jtfEmail.getText();
+        String phone = jtfPhone.getText();
+        String login = jtfLogin.getText().trim();
+        String password = jtfPassword.getText();
+        User usr = new User(name, email, phone, login, password);
     }//GEN-LAST:event_jbCreateActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
