@@ -6,11 +6,11 @@
 package br.com.acme.gui;
 
 import br.com.acme.AcademicLibrary;
-<<<<<<< HEAD
+
 import javax.swing.JOptionPane;
-=======
+
 import br.com.acme.User;
->>>>>>> 157a082351fe5a244c60a6fa2ebf36a2c73f6865
+
 
 /**
  *
