@@ -216,6 +216,7 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+<<<<<<< HEAD
 //        String title = jtfTitle.getText();
 //        String year = jtfYear.getText();
 //        String volume = jtfVolume.getText();
@@ -223,11 +224,20 @@ public class AddBookForm extends javax.swing.JDialog {
 //        String isbn = jtfIsbn.getText();
 //        String pages = jtfPages.getText();
         
+=======
+        String title = jtfTitle.getText();
+        String year = jtfYear.getText();
+        String volume = jtfVolume.getText();
+        String language = jtfLanguage.getText();
+        String isbn = jtfIsbn.getText();
+        String pages = jtfPages.getText();
+
+>>>>>>> 6dd16bf63bf08f7e52084a81319c61bb0789a93f
         //b.setAuthors(authors);
-        Book b = new Book(jtfLanguage.getText(), Long.parseLong(jtfIsbn.getText()), Short.parseShort(jtfPages.getText()), jtfTitle.getText(), Short.parseShort(jtfYear.getText()), Byte.parseByte(jtfVolume.getText()));            
-         
+        Book b = new Book(jtfLanguage.getText(), Long.parseLong(jtfIsbn.getText()), Short.parseShort(jtfPages.getText()), jtfTitle.getText(), Short.parseShort(jtfYear.getText()), Byte.parseByte(jtfVolume.getText()));
+
         this.library.addPublication(b);
-        
+
         GUIMessage.info("BOOK adicionado com sucesso");
         clearComponents();
 
@@ -247,9 +257,11 @@ public class AddBookForm extends javax.swing.JDialog {
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

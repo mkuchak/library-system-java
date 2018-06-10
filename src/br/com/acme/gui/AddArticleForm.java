@@ -14,6 +14,7 @@ import java.util.List;
  * @author Willian
  */
 public class AddArticleForm extends javax.swing.JDialog {
+
     private List<Author> authors;
     private final Frame MainWindowForm;
 
@@ -259,9 +260,10 @@ public class AddArticleForm extends javax.swing.JDialog {
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+        this.setVisible(false);
+        this.MainWindowForm.setVisible(true);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

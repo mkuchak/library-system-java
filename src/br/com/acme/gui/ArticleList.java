@@ -42,10 +42,10 @@ public class ArticleList extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+        this.setVisible(false);
+        //this.MainWindowForm.setVisible(true);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
