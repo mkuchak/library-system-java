@@ -17,10 +17,10 @@ import sun.awt.resources.awt;
  */
 public class AuthorForm extends javax.swing.JDialog {
 
- 
     //private final Dialog DMainWindowForm;
     private List<Author> authors;
     private final Frame MainWindowForm;
+
     /**
      * Creates new form AuthorForm
      *
@@ -104,6 +104,7 @@ public class AuthorForm extends javax.swing.JDialog {
         jcblsCorresponding.setText("Corresponding author?");
         jcblsCorresponding.setName("jcblsCorresponding"); // NOI18N
 
+        jbOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/check.png"))); // NOI18N
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
         jbOk.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +113,7 @@ public class AuthorForm extends javax.swing.JDialog {
             }
         });
 
+        jbClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/close.png"))); // NOI18N
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
 
@@ -174,7 +176,7 @@ public class AuthorForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbClose)
                     .addComponent(jbOk))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -196,7 +198,6 @@ public class AuthorForm extends javax.swing.JDialog {
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
 
         //Author author = new Author(jtxName.getText(), jtxAfiliation.getText(), jtfEmail.getText(), jcblsCorresponding.isSelected());
-
     }//GEN-LAST:event_jbOkActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {

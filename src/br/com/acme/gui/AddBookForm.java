@@ -95,6 +95,7 @@ public class AddBookForm extends javax.swing.JDialog {
 
         jtfPages.setName("jtfPages"); // NOI18N
 
+        jbAddAuthor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add.png"))); // NOI18N
         jbAddAuthor.setText("Add Author");
         jbAddAuthor.setName("jbAddAuthor"); // NOI18N
         jbAddAuthor.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +104,7 @@ public class AddBookForm extends javax.swing.JDialog {
             }
         });
 
+        jbOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/check.png"))); // NOI18N
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
         jbOk.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +113,7 @@ public class AddBookForm extends javax.swing.JDialog {
             }
         });
 
+        jbClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/close.png"))); // NOI18N
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
         jbClose.addActionListener(new java.awt.event.ActionListener() {
@@ -125,15 +128,6 @@ public class AddBookForm extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfIsbn, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(jtfPages)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addComponent(jLabel1))
@@ -156,9 +150,20 @@ public class AddBookForm extends javax.swing.JDialog {
                         .addGap(20, 20, 20)
                         .addComponent(jtfLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jbOk, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(153, 153, 153)
+                                .addComponent(jbOk, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtfIsbn, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                                    .addComponent(jtfPages))))
+                        .addGap(66, 66, 66)
                         .addComponent(jbClose)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
@@ -197,7 +202,7 @@ public class AddBookForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbOk)
                     .addComponent(jbClose))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,15 +228,12 @@ public class AddBookForm extends javax.swing.JDialog {
 //        String language = jtfLanguage.getText();
 //        String isbn = jtfIsbn.getText();
 //        String pages = jtfPages.getText();
-        
-
         String title = jtfTitle.getText();
         String year = jtfYear.getText();
         String volume = jtfVolume.getText();
         String language = jtfLanguage.getText();
         String isbn = jtfIsbn.getText();
         String pages = jtfPages.getText();
-
 
         //b.setAuthors(authors);
         Book b = new Book(jtfLanguage.getText(), Long.parseLong(jtfIsbn.getText()), Short.parseShort(jtfPages.getText()), jtfTitle.getText(), Short.parseShort(jtfYear.getText()), Byte.parseByte(jtfVolume.getText()));

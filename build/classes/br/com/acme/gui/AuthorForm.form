@@ -96,7 +96,7 @@
                   <Component id="jbClose" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jbOk" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -157,6 +157,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbOk">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/acme/icons/common/check.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="OK"/>
         <Property name="name" type="java.lang.String" value="jbOk" noResource="true"/>
       </Properties>
@@ -166,6 +169,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbClose">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/acme/icons/common/close.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Close"/>
         <Property name="name" type="java.lang.String" value="jbClose" noResource="true"/>
       </Properties>

@@ -67,6 +67,7 @@ public class AddArticleForm extends javax.swing.JDialog {
 
         jtfTitle.setName("jtfTitle"); // NOI18N
 
+        jbAddAuthor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add.png"))); // NOI18N
         jbAddAuthor.setText("Add Author");
         jbAddAuthor.setName("jbAddAuthor"); // NOI18N
         jbAddAuthor.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +76,7 @@ public class AddArticleForm extends javax.swing.JDialog {
             }
         });
 
+        jbAddKeyword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/filter.png"))); // NOI18N
         jbAddKeyword.setText("Add Keyword");
         jbAddKeyword.setName("jbAddKeyword"); // NOI18N
 
@@ -100,6 +102,7 @@ public class AddArticleForm extends javax.swing.JDialog {
 
         jtfEndPage.setName("jtfEndPage"); // NOI18N
 
+        jbOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/check.png"))); // NOI18N
         jbOk.setText("OK");
         jbOk.setName("jbOk"); // NOI18N
         jbOk.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +111,7 @@ public class AddArticleForm extends javax.swing.JDialog {
             }
         });
 
+        jbClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/close.png"))); // NOI18N
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
         jbClose.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +240,7 @@ public class AddArticleForm extends javax.swing.JDialog {
                             .addComponent(jbOk)
                             .addComponent(jbClose)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();

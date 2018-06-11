@@ -203,12 +203,22 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/open-book.png"))); // NOI18N
         jMenuItem7.setText("Books");
         jMenuItem7.setName("jmiListBooks"); // NOI18N
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document.png"))); // NOI18N
         jMenuItem8.setText("Articles");
         jMenuItem8.setName("jmiListArticles"); // NOI18N
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem8);
 
         jMenu2.add(jMenu6);
@@ -347,6 +357,18 @@ public class MainWindowForm extends javax.swing.JFrame {
         // this.setVisible(false);
         accountList.setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        BookListForm bookList = new BookListForm(this, true);
+        // this.setVisible(false);
+        bookList.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        ArticleListForm articleList = new ArticleListForm(this, true);
+        // this.setVisible(false);
+        articleList.setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);

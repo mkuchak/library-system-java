@@ -154,7 +154,7 @@
                   </Group>
                   <Component id="jPanel1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -180,6 +180,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbAddAuthor">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/acme/icons/common/add.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Add Author"/>
         <Property name="name" type="java.lang.String" value="jbAddAuthor" noResource="true"/>
       </Properties>
@@ -189,6 +192,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbAddKeyword">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/acme/icons/common/filter.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Add Keyword"/>
         <Property name="name" type="java.lang.String" value="jbAddKeyword" noResource="true"/>
       </Properties>
@@ -250,6 +256,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbOk">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/acme/icons/common/check.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="OK"/>
         <Property name="name" type="java.lang.String" value="jbOk" noResource="true"/>
       </Properties>
@@ -259,6 +268,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbClose">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/acme/icons/common/close.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Close"/>
         <Property name="name" type="java.lang.String" value="jbClose" noResource="true"/>
       </Properties>

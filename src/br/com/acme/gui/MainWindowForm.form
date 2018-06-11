@@ -132,6 +132,9 @@
                     <Property name="text" type="java.lang.String" value="Books"/>
                     <Property name="name" type="java.lang.String" value="jmiListBooks" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem7ActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
                   <Properties>
@@ -144,6 +147,9 @@
                     <Property name="text" type="java.lang.String" value="Articles"/>
                     <Property name="name" type="java.lang.String" value="jmiListArticles" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
