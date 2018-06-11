@@ -11,14 +11,15 @@ import java.awt.Frame;
  *
  * @author Marcos Kuchak Filho
  */
-public class AccountListForm extends javax.swing.JFrame {
+public class AccountListForm extends javax.swing.JDialog {
 
     private final Frame MainWindowForm;
 
     /**
-     * Creates new form AccountList
+     * Creates new form AccountListForm
      */
     public AccountListForm(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         this.MainWindowForm = parent;
         initComponents();
     }
@@ -32,18 +33,18 @@ public class AccountListForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
 
         pack();
