@@ -273,6 +273,11 @@ public class MainWindowForm extends javax.swing.JFrame {
         jMenuItem12.setMinimumSize(new java.awt.Dimension(165, 34));
         jMenuItem12.setName("jmiAbout"); // NOI18N
         jMenuItem12.setPreferredSize(new java.awt.Dimension(165, 34));
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem12);
 
         jCheckBoxMenuItem1.setSelected(true);
@@ -369,6 +374,12 @@ public class MainWindowForm extends javax.swing.JFrame {
         // this.setVisible(false);
         articleList.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        AboutForm about = new AboutForm(this, true);
+        //this.setVisible(false);
+        about.setVisible(true);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
