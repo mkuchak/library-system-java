@@ -62,9 +62,9 @@ public class ArticleListForm extends javax.swing.JDialog {
 
                 ArrayList<String> keyWords = a.getKeyWords();
                 String s = "";
-                for (String k : keyWords) {
+                /*for (String k : keyWords) {
                     s = s + k + ", ";
-                }
+                }*/
 
                 model.setValueAt(s, line, 4);
                 model.setValueAt(a.getIssn(), line, 5);

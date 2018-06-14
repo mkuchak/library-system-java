@@ -347,7 +347,6 @@ public class AddArticleForm extends javax.swing.JDialog {
         Article article = new Article(issn, (byte) 0, startPage, endPage, title, year, volume);
 
         article.setJournal(journal);
-        System.out.println(article.getKeyWords());
         article.setKeyWords(keyWords);
         article.setAuthors(authors);
         library.addPublication(article);
