@@ -7,27 +7,48 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ *
+ * @author Marcos Kuchak Filho
+ */
 public class ALManager {
 
-    // Cria a variável global da AcademicLibrary
+    /**
+     * Creates the global variable AcademicLibrary which represents your
+     * Library.
+     *
+     */
     private static AcademicLibrary library;
 
-    //Método estático que chama o método newLibrary
+    /**
+     * Static method to call a new library.
+     *
+     */
     static {
         newLibrary();
     }
 
-    //captura o objeto AcademicLibrary que foi carregado ou criado
+    /**
+     * Get library instanced which was charged or created.
+     *
+     */
     public static AcademicLibrary getInstance() {
         return library;
     }
 
-    //cria uma nova instância de AcademicLibrary
+    /**
+     * Creates a new library instance.
+     *
+     */
     public static void newLibrary() {
         library = new AcademicLibrary("New", "New Academic Library Control System");
     }
 
-    //Méotodo chamado para tentar carregar um arquivo já existente no caminho especificado
+    /**
+     * Loads a existent library file from a path.
+     *
+     * @param path local path file
+     */
     public static void loadLibrary(String path) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(path);
         ObjectInputStream ois = new ObjectInputStream(fis);
@@ -37,7 +58,11 @@ public class ALManager {
         fis.close();
     }
 
-    //Méotodo chamado para salvar na memória a instância de AcademicLibrary
+    /**
+     * Save a library information to a new file.
+     *
+     * @param path local path file
+     */
     public static void persistLibrary(String path) throws FileNotFoundException, IOException {
         FileOutputStream fos = new FileOutputStream(path);
         ObjectOutputStream oos = new ObjectOutputStream(fos);

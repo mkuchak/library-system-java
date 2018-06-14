@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -27,11 +26,6 @@ public class AcademicLibrary extends ILibrary implements Serializable {
         this.description = description;
         this.creationDate = new Date();
         ArrayList publications = new ArrayList();
-
-        //this.users = new HashMap();
-        //this.articles = new HashMap();
-        //this.books = new HashMap();
-        //this.selectedLog = true;
     }
 
     /**
@@ -47,10 +41,8 @@ public class AcademicLibrary extends ILibrary implements Serializable {
     /**
      * Obtain the full list of users on library system
      *
+     * @return
      */
-    /*public Map<String, User> getUsers() {
-        return users;
-    }*/
     public ArrayList<User> getUsers() {
         Collection<User> collectionUsers = this.users.values();
         ArrayList<User> getUsers = new ArrayList();
@@ -75,7 +67,7 @@ public class AcademicLibrary extends ILibrary implements Serializable {
      * @param login searches on map by login and remove if found
      * @return true if user was removed and false if isn't
      */
-    public boolean removeUser(String login) { //procura um usuário pelo login e remove(true) se encontrar, ou falso.
+    public boolean removeUser(String login) {
         if (this.users.containsKey(login)) {
             this.users.remove(login);
             return true;
@@ -108,7 +100,7 @@ public class AcademicLibrary extends ILibrary implements Serializable {
     }
 
     /**
-     * Adiciona uma publicação na ArrayList publication.
+     * Add new publication on ArrayList publication.
      *
      * @param p
      */
@@ -142,7 +134,7 @@ public class AcademicLibrary extends ILibrary implements Serializable {
     }
 
     /**
-     * Retorna o array publications. publications.
+     * Get all publications on ArrayList.
      *
      * @return publication
      */
@@ -152,25 +144,16 @@ public class AcademicLibrary extends ILibrary implements Serializable {
         return publication;
     }
 
-    /*//Métodos da classe
-    public short countArticles() {
-        for (short p : publications) {
-
-        }
-
-        return p;//provisorio
-    }
-     */
     public short countBooks() {
-        return 0;//provisorio
+        return 0;
     }
 
     public Article findArticle(long issn) {
-        return null;//provisorio
+        return null;
     }
 
     public Article findArticle(String title) {
-        return null;//provisorio
+        return null;
     }
 
     /**
@@ -200,9 +183,11 @@ public class AcademicLibrary extends ILibrary implements Serializable {
         return null;
     }
 
-    /* @param login é um atributo de User
-    * @method findUser é utilizado para buscar o login do usuario
-    * @return retorna o objeto se encontrado
+    /**
+     * Find user to check if exists.
+     *
+     * @param login
+     * @return user object
      */
     public User findUser(String login) {
         if (this.users.containsKey(login)) {

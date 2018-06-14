@@ -1,6 +1,5 @@
 package br.com.acme;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -78,21 +77,4 @@ public class User extends Person {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    /*
-    * @method isValid é utilizado para verificar se o login e senha do usuario são os mesmos no arquivo persistido
-    * @return retorna true se o login e senha estão corretos
-     */
- /*public boolean isValid() {
-        if (this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD)) {
-            return true;
-        }
-        for (User usr : libray.getUsers()) {
-            System.out.println(usr.getName());
-            if (this.login.equalsIgnoreCase(usr.getLogin()) && this.password.equalsIgnoreCase(usr.getPassword())) {
-                return true;
-            }
-        }
-        return false;
-    }*/
 }

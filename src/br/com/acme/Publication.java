@@ -2,7 +2,6 @@ package br.com.acme;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -17,18 +16,18 @@ public abstract class Publication implements Serializable {
     private List<Author> authors;
 
     /**
-     * Constructor default method
+     * Constructor default method.
      */
     public Publication() {
         authors = new ArrayList();
     }
 
     /**
-     * Overloading constructor method
+     * Overloading constructor method.
      *
-     * @param title publication title
-     * @param year publication year
-     * @param volume publication volume
+     * @param title
+     * @param year
+     * @param volume
      */
     public Publication(String title, short year, byte volume) {
         this.title = title;
@@ -79,9 +78,7 @@ public abstract class Publication implements Serializable {
      * @param name is the object name that will be removed
      */
     public void removeAuthor(String name) {
-        if (authors.contains(name)) {
-            authors.remove(name);
-        }
+        authors.remove(name);
     }
 
     /**
@@ -92,13 +89,5 @@ public abstract class Publication implements Serializable {
     public List<Author> getAuthors() {
         return this.authors;
     }
-    /*public List<Author> getAuthors() {
-        Collection<Author> collectionAuthors = this.authors;
-        ArrayList<Author> getAuthors = new ArrayList();
-        for (Author i : collectionAuthors) {
-            getAuthors.add(i);
-        }
-        return getAuthors;
-    }*/
 
 }

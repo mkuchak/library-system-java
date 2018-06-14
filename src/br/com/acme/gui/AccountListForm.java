@@ -8,7 +8,6 @@ package br.com.acme.gui;
 import br.com.acme.ALManager;
 import br.com.acme.AcademicLibrary;
 import br.com.acme.User;
-//import java.awt.Frame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -19,7 +18,6 @@ import javax.swing.table.TableModel;
  */
 public class AccountListForm extends javax.swing.JDialog {
 
-    //private final Frame MainWindowForm;
     private final AcademicLibrary library;
 
     /**
@@ -137,7 +135,6 @@ public class AccountListForm extends javax.swing.JDialog {
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.setVisible(false);
-        //this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
@@ -154,7 +151,6 @@ public class AccountListForm extends javax.swing.JDialog {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.dispose();
-        //this.MainWindowForm.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

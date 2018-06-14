@@ -14,7 +14,6 @@ import java.awt.event.KeyEvent;
 import java.net.URL;
 import javax.swing.JFileChooser;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,6 +30,9 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     /**
      * Creates new form MainWindowForm
+     *
+     * @param loginForm
+     * @param user
      */
     public MainWindowForm(LoginForm loginForm, User user) {
         this.user = user;
@@ -367,7 +369,6 @@ public class MainWindowForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiExitActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
         try {
             Desktop.getDesktop().browse(new URL("https://github.com/mkuchak/library-system-java/issues").toURI());
         } catch (Exception e) {
@@ -382,7 +383,6 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         AddArticleForm article = new AddArticleForm(this, true);
-        // this.setVisible(false);
         article.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -397,25 +397,21 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         AccountListForm accountList = new AccountListForm(this, true);
-        // this.setVisible(false);
         accountList.setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         BookListForm bookList = new BookListForm(this, true);
-        // this.setVisible(false);
         bookList.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         ArticleListForm articleList = new ArticleListForm(this, true);
-        // this.setVisible(false);
         articleList.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         AboutForm about = new AboutForm(this, true);
-        //this.setVisible(false);
         about.setVisible(true);
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -485,7 +481,6 @@ public class MainWindowForm extends javax.swing.JFrame {
 
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
-        //this.setVisible(false);
         account.setVisible(true);
     }
 

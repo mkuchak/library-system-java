@@ -12,14 +12,15 @@ public class Publisher implements Serializable {
     private String country;
 
     /**
-     * Metodo construtor Default
+     * Default constructor method.
+     *
      */
     public Publisher() {
 
     }
 
     /**
-     * Overloading do método construtor
+     * Overloading constructor method.
      *
      * @param name nome publisher
      * @param country nome país

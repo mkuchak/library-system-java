@@ -21,16 +21,16 @@ public class Article extends Publication implements Serializable {
     }
 
     /**
-     * Método construtor que cria um objeto da classe publication com todos os
-     * parametros
+     * Constructor method to create a new object from publication class with all
+     * parameters.
      *
-     * @param issn é o numero do Article
-     * @param issue é o numero do Article
-     * @param startPage é o numero de paginas iniciais
-     * @param endPage é o numero de paginas finais
-     * @param title é o titulo do Article
-     * @param year é o ano do Article
-     * @param volume é o numero do volume do Article
+     * @param issn id key
+     * @param issue article number (not implemented)
+     * @param startPage initial number page
+     * @param endPage last number page
+     * @param title title from article
+     * @param year year released
+     * @param volume volume edition
      */
     public Article(long issn, byte issue, short startPage, short endPage, String title, short year, byte volume) {
         super(title, year, volume);
@@ -88,17 +88,16 @@ public class Article extends Publication implements Serializable {
         this.endPage = endPage;
     }
 
-    //Demais metódos solicitados no diagrama
     public void addKeyWord(String key) {
 
     }
 
     public ArrayList<String> getKeyWords() {
-        return null;//provisorio
+        return null;
     }
 
     public boolean removeKeyWords(String key) {
-        return false;//provisorio
+        return false;
     }
 
 }

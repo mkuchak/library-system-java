@@ -154,7 +154,7 @@ public class KeywordForm extends javax.swing.JDialog {
             keyWords.add((String) k);
         }
 
-        //GUIMessage.info("KeyWords added successfully!");
+        GUIMessage.info("Keywords added successfully!");
         setVisible(false);
         dispose();
     }//GEN-LAST:event_jbCloseActionPerformed

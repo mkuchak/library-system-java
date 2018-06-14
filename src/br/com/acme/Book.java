@@ -15,14 +15,14 @@ public class Book extends Publication {
     }
 
     /**
-     * Método construtor com parâmetros (overloading)
+     * Constructor method with parameters.
      *
-     * @param language linguagem do book
-     * @param isbn isbn do book
-     * @param pages numero de pages do book
-     * @param title title do book
-     * @param year ano do book
-     * @param volume volume do book
+     * @param language
+     * @param isbn id key
+     * @param pages
+     * @param title
+     * @param year
+     * @param volume
      */
     public Book(String language, long isbn, short pages, String title, short year, byte volume) {
         super(title, year, volume);

@@ -17,11 +17,11 @@ public class Journal implements Serializable {
     }
 
     /**
-     * Overloading do método construtor
+     * Overloading constructor method.
      *
-     * @param name do Journal
-     * @param impactFactor do Journal
-     * @param publisher do Journal
+     * @param name
+     * @param impactFactor
+     * @param publisher
      */
     public Journal(String name, byte impactFactor, Publisher publisher) {
         this.impactFactor = impactFactor;
@@ -37,20 +37,10 @@ public class Journal implements Serializable {
         this.name = name;
     }
 
-    /**
-     * Método que retorna o Publisher
-     *
-     * @return
-     */
     public Publisher getPublisher() {
         return publisher;
     }
 
-    /**
-     * Métod que seta o Publisher
-     *
-     * @param publisher
-     */
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
@@ -59,18 +49,8 @@ public class Journal implements Serializable {
         return impactFactor;
     }
 
-    /* @param impactFactor é um atributo de Journal
-    * @method setImpactFactor é utilizado para modificar o valor se for < 0 lança uma exception pedindo para atribuir um valor que seja > 0
-    * @return retorna o valor de impactFactor
-     */
-    public void setImpactFactor(byte impactFactor) throws IllegalArgumentException {
-        if (impactFactor < 0) {
-            String msg = "Valor do campo Impact Factor não pode ser NEGATIVO!!!";
-            IllegalArgumentException ex = new IllegalArgumentException(msg);
-            throw ex;
-        } else {
-            this.impactFactor = impactFactor;
-        }
+    public void setImpactFactor(byte impactFactor) {
+        this.impactFactor = impactFactor;
     }
 
 }

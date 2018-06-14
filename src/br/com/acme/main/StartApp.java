@@ -11,9 +11,9 @@ public class StartApp {
     public static String file;
 
     public static void main(String[] args) {
-        path = new File(System.getProperty("user.home") + "\\LibraryFiles\\");
+        path = new File(System.getProperty("user.home") + "\\Documents\\LibraryFiles\\");
         path.mkdirs();
-        file = System.getProperty("user.home") + "\\LibraryFiles\\library";
+        file = System.getProperty("user.home") + "\\Documents\\LibraryFiles\\library";
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             ALManager.loadLibrary(file);

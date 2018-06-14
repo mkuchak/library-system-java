@@ -32,9 +32,6 @@ public class AddBookForm extends javax.swing.JDialog {
         authors = new ArrayList();
         library = ALManager.getInstance();
         initComponents();
-        //temporário abaixo
-        //Book book = new Book("pt_BR", 121245, (short) 300, "Meu Primeiro Livro", (short) 2018, (byte) 1);
-        //library.addPublication(book);
     }
 
     /**
@@ -214,12 +211,12 @@ public class AddBookForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtfLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfLanguageActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jtfLanguageActionPerformed
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
         AuthorForm authorForm = new AuthorForm(this, true, authors);
-        authorForm.setVisible(true); //exibe o dialog do author
+        authorForm.setVisible(true);
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
@@ -298,17 +295,11 @@ public class AddBookForm extends javax.swing.JDialog {
     }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        //dispose();
-        //this.dispose();
         AddBookForm.this.setVisible(false);
-        //this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        //dispose();
-        //this.dispose();
         AddBookForm.this.setVisible(false);
-        //this.MainWindowForm.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

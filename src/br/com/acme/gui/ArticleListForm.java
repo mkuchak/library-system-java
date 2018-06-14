@@ -168,6 +168,22 @@ public class ArticleListForm extends javax.swing.JDialog {
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
         if (GUIMessage.action() == JOptionPane.YES_OPTION) {
             //action code here
+            if (jtArticleList.getSelectedRow() != -1) {
+                DefaultTableModel rows = (DefaultTableModel) jtArticleList.getModel();
+                TableModel model = jtArticleList.getModel();
+
+                ArrayList<Publication> publications = library.getAllPublications();
+                String rowTitle = (String) model.getValueAt(jtArticleList.getSelectedRow(), 0);
+                for (Publication p : publications) {
+                    if (p instanceof Article) {
+                        Article a = (Article) p;
+                        if (a.getTitle().equals(rowTitle)) {
+                            library.removePublication(a.getIssn());
+                        }
+                    }
+                }
+                rows.removeRow(jtArticleList.getSelectedRow());
+            }
         }
     }//GEN-LAST:event_jbDeleteActionPerformed
 
