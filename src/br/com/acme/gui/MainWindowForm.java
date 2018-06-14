@@ -161,16 +161,31 @@ public class MainWindowForm extends javax.swing.JFrame {
         jmiNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jmiNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document3.png"))); // NOI18N
         jmiNew.setText("New");
+        jmiNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiNewActionPerformed(evt);
+            }
+        });
         jmFile.add(jmiNew);
 
         jmiOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         jmiOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
         jmiOpen.setText("Open");
+        jmiOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiOpenActionPerformed(evt);
+            }
+        });
         jmFile.add(jmiOpen);
 
         jmiSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jmiSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
         jmiSave.setText("Save");
+        jmiSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiSaveActionPerformed(evt);
+            }
+        });
         jmFile.add(jmiSave);
 
         jSeparator1.setToolTipText("");
@@ -405,22 +420,37 @@ public class MainWindowForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jbSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSaveActionPerformed
-        JFileChooser file = new JFileChooser(StartApp.path);
-        file.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-        file.setCurrentDirectory(StartApp.path);
-        file.setSelectedFile(new File("library.ser"));
-        int res = file.showSaveDialog(this);
-        if (res == JFileChooser.CANCEL_OPTION) {
-            return;
-        }
-        try {
-            File saveFile = file.getSelectedFile();
-            ALManager.persistLibrary(saveFile.getCanonicalPath());
-        } catch (IOException ex) {
-        }
+        saveLibrary();
     }//GEN-LAST:event_jbSaveActionPerformed
 
     private void jbOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOpenActionPerformed
+        openLibrary();
+    }//GEN-LAST:event_jbOpenActionPerformed
+
+    private void jbNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewActionPerformed
+        newLibrary();
+    }//GEN-LAST:event_jbNewActionPerformed
+
+    private void jmiNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNewActionPerformed
+        newLibrary();
+    }//GEN-LAST:event_jmiNewActionPerformed
+
+    private void jmiOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiOpenActionPerformed
+        openLibrary();
+    }//GEN-LAST:event_jmiOpenActionPerformed
+
+    private void jmiSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSaveActionPerformed
+        saveLibrary();
+    }//GEN-LAST:event_jmiSaveActionPerformed
+
+    private void newLibrary() {
+        if (GUIMessage.action() == JOptionPane.YES_OPTION) {
+            ALManager.newLibrary();
+            GUIMessage.info("New library created.");
+        }
+    }
+
+    private void openLibrary() {
         JFileChooser file = new JFileChooser();
         file.setFileSelectionMode(JFileChooser.FILES_ONLY);
         file.setCurrentDirectory(StartApp.path);
@@ -435,15 +465,23 @@ public class MainWindowForm extends javax.swing.JFrame {
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(MainWindowForm.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
-    }//GEN-LAST:event_jbOpenActionPerformed
-
-    private void jbNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewActionPerformed
-        if (GUIMessage.action() == JOptionPane.YES_OPTION) {
-            ALManager.newLibrary();
-            GUIMessage.info("New library created.");
+    private void saveLibrary() {
+        JFileChooser file = new JFileChooser(StartApp.path);
+        file.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        file.setCurrentDirectory(StartApp.path);
+        file.setSelectedFile(new File("library.ser"));
+        int res = file.showSaveDialog(this);
+        if (res == JFileChooser.CANCEL_OPTION) {
+            return;
         }
-    }//GEN-LAST:event_jbNewActionPerformed
+        try {
+            File saveFile = file.getSelectedFile();
+            ALManager.persistLibrary(saveFile.getCanonicalPath());
+        } catch (IOException ex) {
+        }
+    }
 
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
