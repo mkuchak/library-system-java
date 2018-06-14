@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author Willian
+ * @author Marcos Kuchak Filho
  */
 public class AddArticleForm extends javax.swing.JDialog {
 
@@ -20,6 +20,9 @@ public class AddArticleForm extends javax.swing.JDialog {
 
     /**
      * Creates new form AddArticleForm
+     *
+     * @param parent
+     * @param modal
      */
     public AddArticleForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -255,17 +258,17 @@ public class AddArticleForm extends javax.swing.JDialog {
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
         //validar e adicionar objeto
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbOkActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

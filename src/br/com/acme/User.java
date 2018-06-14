@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public class User extends Person {
 
@@ -25,7 +25,7 @@ public class User extends Person {
         this.phone = phone;
         this.login = login;
         this.password = password;
-        lastAccess = new Date();
+        this.lastAccess = new Date();
     }
 
     public User(String login, String password) {
@@ -88,6 +88,7 @@ public class User extends Person {
             return true;
         }
         for (User usr : libray.getUsers()) {
+            System.out.println(usr.getName());
             if (this.login.equalsIgnoreCase(usr.getLogin()) && this.password.equalsIgnoreCase(usr.getPassword())) {
                 return true;
             }

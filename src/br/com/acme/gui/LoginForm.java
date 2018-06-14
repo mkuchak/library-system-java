@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Certa
+ * @author Marcos Kuchak Filho
  */
 public class LoginForm extends javax.swing.JDialog {
 

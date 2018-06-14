@@ -1,11 +1,12 @@
 package br.com.acme;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public abstract class Publication {
 
@@ -86,5 +87,13 @@ public abstract class Publication {
     public List<Author> getAuthors() {
         return authors;
     }
+    /*public ArrayList<User> getAuthors() {
+        List<Author> collectionAuthors = this.authors;
+        ArrayList<User> authors = new ArrayList();
+        for (Author i : collectionAuthors) {
+            authors.add(i);
+        }
+        return getAuthors;
+    }*/
 
 }

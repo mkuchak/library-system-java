@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public class Article extends Publication {
 

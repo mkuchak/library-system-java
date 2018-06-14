@@ -5,8 +5,17 @@
  */
 package br.com.acme.gui;
 
-import java.awt.Frame;
+import br.com.acme.ALManager;
+import br.com.acme.AcademicLibrary;
+import br.com.acme.Author;
+import br.com.acme.Book;
+import br.com.acme.Publication;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -14,15 +23,51 @@ import javax.swing.JOptionPane;
  */
 public class BookListForm extends javax.swing.JDialog {
 
-    private final Frame MainWindowForm;
+    private final AcademicLibrary library;
 
     /**
      * Creates new form BookListForm
+     *
+     * @param parent
+     * @param modal
      */
     public BookListForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.MainWindowForm = parent;
         initComponents();
+        library = ALManager.getInstance();
+        populateTable();
+    }
+
+    private void populateTable() {
+        DefaultTableModel rows = (DefaultTableModel) jtBookList.getModel();
+        TableModel model = jtBookList.getModel();
+
+        ArrayList<Publication> publications = library.getAllPublications();
+
+        int line = 0;
+        for (Publication p : publications) {
+            if (p instanceof Book) {
+                rows.addRow(new Object[]{});
+                Book b = (Book) p;
+                model.setValueAt(b.getTitle(), line, 0);
+
+                //List<Author> authors = b.getAuthors();
+                String names = "";
+                /*for (Author a : authors) {
+                    names = names + a.getName() + ", ";
+                }*/
+
+                model.setValueAt(names, line, 1);
+
+                model.setValueAt(b.getYear(), line, 2);
+                model.setValueAt(b.getVolume(), line, 3);
+                model.setValueAt(b.getLanguage(), line, 4);
+                model.setValueAt(b.getIsbn(), line, 5);
+                model.setValueAt(b.getPages(), line, 6);
+                line++;
+            }
+        }
+
     }
 
     /**
@@ -35,7 +80,7 @@ public class BookListForm extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtBookList = new javax.swing.JTable();
         jbDelete = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
 
@@ -43,18 +88,15 @@ public class BookListForm extends javax.swing.JDialog {
         setTitle("Book List");
         setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtBookList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title", "Author", "Year", "Volume", "Language", "ISBN", "Pages"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtBookList);
 
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/garbage.png"))); // NOI18N
         jbDelete.setText("Delete");
@@ -104,8 +146,7 @@ public class BookListForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
@@ -115,14 +156,13 @@ public class BookListForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbDelete;
+    private javax.swing.JTable jtBookList;
     // End of variables declaration//GEN-END:variables
 }

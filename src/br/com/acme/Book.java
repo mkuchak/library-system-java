@@ -2,7 +2,7 @@ package br.com.acme;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public class Book extends Publication {
 
@@ -14,8 +14,9 @@ public class Book extends Publication {
         super();
     }
 
-     /**
+    /**
      * Método construtor com parâmetros (overloading)
+     *
      * @param language linguagem do book
      * @param isbn isbn do book
      * @param pages numero de pages do book
@@ -23,13 +24,13 @@ public class Book extends Publication {
      * @param year ano do book
      * @param volume volume do book
      */
-      public Book(String language, long isbn, short pages, String title, short year, byte volume) {
+    public Book(String language, long isbn, short pages, String title, short year, byte volume) {
         super(title, year, volume);
         this.language = language;
         this.isbn = isbn;
         this.pages = pages;
     }
-    
+
     public String getLanguage() {
         return language;
     }

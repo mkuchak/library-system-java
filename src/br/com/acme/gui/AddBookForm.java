@@ -5,6 +5,7 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.ALManager;
 import br.com.acme.AcademicLibrary;
 import java.awt.Frame;
 import br.com.acme.Author;
@@ -14,11 +15,10 @@ import java.util.List;
 
 /**
  *
- * @author Willian P
+ * @author Marcos Kuchak Filho
  */
 public class AddBookForm extends javax.swing.JDialog {
 
-    private final Frame MainWindowForm;
     private List<Author> authors;
     private AcademicLibrary library;
 
@@ -27,10 +27,13 @@ public class AddBookForm extends javax.swing.JDialog {
      */
     public AddBookForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        ArrayList<Author> authors;
-        //library = ALManager.getInstance();
-        this.MainWindowForm = parent;
+        //ArrayList<Author> authors;
+        library = ALManager.getInstance();
         initComponents();
+        //setDefaultCloseOperation(AuthorForm.DO_NOTHING_ON_CLOSE);
+        //temporário abaixo
+        Book book = new Book("pt_BR", 121245, (short) 300, "Meu Primeiro Livro", (short) 2018, (byte) 1);
+        library.addPublication(book);
     }
 
     /**
@@ -221,31 +224,23 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
-
-//        String title = jtfTitle.getText();
-//        String year = jtfYear.getText();
-//        String volume = jtfVolume.getText();
-//        String language = jtfLanguage.getText();
-//        String isbn = jtfIsbn.getText();
-//        String pages = jtfPages.getText();
         String title = jtfTitle.getText();
-        String year = jtfYear.getText();
-        String volume = jtfVolume.getText();
+        short year = Short.parseShort(jtfYear.getText());
+        byte volume = Byte.parseByte(jtfVolume.getText());
         String language = jtfLanguage.getText();
-        String isbn = jtfIsbn.getText();
-        String pages = jtfPages.getText();
+        long isbn = Long.parseLong(jtfIsbn.getText());
+        short pages = Short.parseShort(jtfPages.getText());
 
-        //b.setAuthors(authors);
-        Book b = new Book(jtfLanguage.getText(), Long.parseLong(jtfIsbn.getText()), Short.parseShort(jtfPages.getText()), jtfTitle.getText(), Short.parseShort(jtfYear.getText()), Byte.parseByte(jtfVolume.getText()));
+        Book book = new Book(language, isbn, pages, title, year, volume);
+        //book.setAuthors(authors);
+        library.addPublication(book);
 
-        this.library.addPublication(b);
-
-        GUIMessage.info("BOOK adicionado com sucesso");
-        clearComponents();
+        clearForm();
+        GUIMessage.info("Book added successfully.");
 
     }//GEN-LAST:event_jbOkActionPerformed
 
-    private void clearComponents() {
+    private void clearForm() {
         jtfTitle.setText("");
         jtfYear.setText("");
         jtfVolume.setText("");
@@ -255,13 +250,17 @@ public class AddBookForm extends javax.swing.JDialog {
     }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        //dispose();
+        //this.dispose();
+        AddBookForm.this.setVisible(false);
+        //this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        //dispose();
+        //this.dispose();
+        AddBookForm.this.setVisible(false);
+        //this.MainWindowForm.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

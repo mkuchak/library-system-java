@@ -2,7 +2,7 @@ package br.com.acme;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public abstract class Person {
 

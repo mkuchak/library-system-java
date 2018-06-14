@@ -104,7 +104,7 @@ public class ArticleListForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
@@ -115,7 +115,7 @@ public class ArticleListForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }
 

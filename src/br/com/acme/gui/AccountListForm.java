@@ -5,8 +5,13 @@
  */
 package br.com.acme.gui;
 
-import java.awt.Frame;
+import br.com.acme.ALManager;
+import br.com.acme.AcademicLibrary;
+import br.com.acme.User;
+//import java.awt.Frame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -14,15 +19,37 @@ import javax.swing.JOptionPane;
  */
 public class AccountListForm extends javax.swing.JDialog {
 
-    private final Frame MainWindowForm;
+    //private final Frame MainWindowForm;
+    private final AcademicLibrary library;
 
     /**
      * Creates new form AccountListForm
+     *
+     * @param parent
+     * @param modal
      */
     public AccountListForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.MainWindowForm = parent;
         initComponents();
+        library = ALManager.getInstance();
+        populateTable();
+
+    }
+
+    private void populateTable() {
+        DefaultTableModel rows = (DefaultTableModel) jtAccounts.getModel();
+        TableModel model = jtAccounts.getModel();
+
+        int line = 0;
+        for (User u : library.getUsers()) {
+            rows.addRow(new Object[]{});
+            model.setValueAt(u.getName(), line, 0);
+            model.setValueAt(u.getEmail(), line, 1);
+            model.setValueAt(u.getPhone(), line, 2);
+            model.setValueAt(u.getLogin(), line, 3);
+            model.setValueAt(u.getPassword(), line, 4);
+            line++;
+        }
     }
 
     /**
@@ -35,7 +62,7 @@ public class AccountListForm extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtAccounts = new javax.swing.JTable();
         jbDelete = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
 
@@ -43,18 +70,23 @@ public class AccountListForm extends javax.swing.JDialog {
         setTitle("Account List");
         setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtAccounts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Email", "Phone", "Login", "Password"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtAccounts);
 
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/garbage.png"))); // NOI18N
         jbDelete.setText("Delete");
@@ -81,7 +113,7 @@ public class AccountListForm extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
+                .addGap(192, 192, 192)
                 .addComponent(jbDelete)
                 .addGap(32, 32, 32)
                 .addComponent(jbClose)
@@ -105,24 +137,30 @@ public class AccountListForm extends javax.swing.JDialog {
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        //this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
         if (GUIMessage.action() == JOptionPane.YES_OPTION) {
             //action code here
+            if (jtAccounts.getSelectedRow() != -1) {
+                DefaultTableModel rows = (DefaultTableModel) jtAccounts.getModel();
+                TableModel model = jtAccounts.getModel();
+                library.removeUser((String) model.getValueAt(jtAccounts.getSelectedRow(), 3));
+                rows.removeRow(jtAccounts.getSelectedRow());
+            }
         }
     }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
+        this.dispose();
+        //this.MainWindowForm.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbDelete;
+    private javax.swing.JTable jtAccounts;
     // End of variables declaration//GEN-END:variables
 }

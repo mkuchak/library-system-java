@@ -7,44 +7,32 @@ package br.com.acme.gui;
 
 import br.com.acme.Author;
 import java.awt.Dialog;
-import java.awt.Frame;
 import java.util.List;
-import sun.awt.resources.awt;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author Willian
+ * @author Marcos Kuchak Filho
  */
 public class AuthorForm extends javax.swing.JDialog {
 
     //private final Dialog DMainWindowForm;
     private List<Author> authors;
-    private final Frame MainWindowForm;
+    private final Dialog PreviousWindowForm;
 
     /**
      * Creates new form AuthorForm
      *
-     * @param parent é passado um frame
+     * @param parent
      * @param modal
-     * @param authors uma lista de autores
-     */
-    public AuthorForm(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-        MainWindowForm = parent;
-    }
-
-    /**
-     * Creates new form AuthorForm
-     *
-     * @param parent é passado um Dialog
-     * @param modal
-     * @param authors uma lista de autores
      */
     public AuthorForm(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        MainWindowForm = null;
+        //setDefaultCloseOperation(AuthorForm.DO_NOTHING_ON_CLOSE);
+        this.PreviousWindowForm = parent;
     }
 
     /**
@@ -67,7 +55,6 @@ public class AuthorForm extends javax.swing.JDialog {
         jbOk = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Author");
         setResizable(false);
 
@@ -116,6 +103,11 @@ public class AuthorForm extends javax.swing.JDialog {
         jbClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/close.png"))); // NOI18N
         jbClose.setText("Close");
         jbClose.setName("jbClose"); // NOI18N
+        jbClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,6 +171,8 @@ public class AuthorForm extends javax.swing.JDialog {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleDescription("");
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -200,11 +194,17 @@ public class AuthorForm extends javax.swing.JDialog {
         //Author author = new Author(jtxName.getText(), jtxAfiliation.getText(), jtfEmail.getText(), jcblsCorresponding.isSelected());
     }//GEN-LAST:event_jbOkActionPerformed
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
-        this.MainWindowForm.setVisible(true);
-    }
+    private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
+        this.dispose();
+        //AuthorForm.this.setVisible(false);
+        //PreviousWindowForm.setVisible(true);
+    }//GEN-LAST:event_jbCloseActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {
+        this.dispose();
+        //AuthorForm.this.setVisible(false);
+        //PreviousWindowForm.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */

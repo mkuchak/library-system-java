@@ -2,7 +2,7 @@ package br.com.acme;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public class Publisher {
 
@@ -18,10 +18,10 @@ public class Publisher {
 
     /**
      * Overloading do método construtor
+     *
      * @param name nome publisher
      * @param country nome país
      */
-
     public Publisher(String name, String coutry) {
         this.name = name;
         this.coutry = coutry;

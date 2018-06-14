@@ -17,6 +17,9 @@ public class AboutForm extends javax.swing.JDialog {
 
     /**
      * Creates new form AboutForm
+     *
+     * @param parent
+     * @param modal
      */
     public AboutForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -95,7 +98,7 @@ public class AboutForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

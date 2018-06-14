@@ -5,22 +5,20 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
- * @authors Marcos Kuchak, Willian Patsche, William Hertz
+ * @author Marcos Kuchak Filho
  */
 public class AcademicLibrary extends ILibray {
 
     private String name;
     private String description;
     private Date creationDate;
-    private HashMap<String, User> users = new HashMap();
-    private Map<Long, Article> articles; //key: issn
-    private Map<Long, Book> books; //key: isbn
-    //private HashMap<Long, User> users = new HashMap();
-    //private HashMap<Long, Article> articles = new HashMap();
-    //private HashMap<Long, Book> books = new HashMap();
+    private HashMap<String, User> users = new HashMap(); //Key: Login
+    private HashMap<Long, Article> articles = new HashMap(); //Key: ISSN (e.g. 1018-4783)
+    private HashMap<Long, Book> books = new HashMap();       //Key: ISBN (e.g. 978-3-16-148410-0)
     private boolean selectedLog;
 
     public AcademicLibrary(String name, String description) {
@@ -49,11 +47,14 @@ public class AcademicLibrary extends ILibray {
      * Obtain the full list of users on library system
      *
      */
-    public ArrayList<User> getUsers() { //retorna todos os usuários do map
+    /*public Map<String, User> getUsers() {
+        return users;
+    }*/
+    public ArrayList<User> getUsers() {
         Collection<User> collectionUsers = this.users.values();
         ArrayList<User> getUsers = new ArrayList();
-        for (User x : collectionUsers) {
-            getUsers.add(x);
+        for (User i : collectionUsers) {
+            getUsers.add(i);
         }
         return getUsers;
     }
@@ -105,6 +106,31 @@ public class AcademicLibrary extends ILibray {
         this.creationDate = creationDate;
     }
 
+    /**
+     * Adiciona uma publicação na ArrayList publication.
+     *
+     * @param p
+     */
+    @Override
+    public void addPublication(Publication p) {
+        if (p instanceof Book) {
+            books.put(((Book) p).getIsbn(), (Book) p);
+        } else if (p instanceof Article) {
+            articles.put(((Article) p).getIssn(), (Article) p);
+        }
+    }
+
+    /**
+     * Retorna o array publications. publications.
+     *
+     * @return publication
+     */
+    public ArrayList<Publication> getAllPublications() {
+        ArrayList<Publication> publication = new ArrayList(articles.values());
+        publication.addAll(books.values());
+        return publication;
+    }
+
     /*//Métodos da classe
     public short countArticles() {
         for (short p : publications) {
@@ -126,12 +152,31 @@ public class AcademicLibrary extends ILibray {
         return null;//provisorio
     }
 
+    /**
+     * Find book from ISBN.
+     *
+     * @param isbn
+     * @return Book
+     */
     public Book findBook(long isbn) {
-        return null;//provisorio
+        return books.get(isbn);
+
     }
 
+    /**
+     * Find book from title.
+     *
+     * @param title
+     * @return Book
+     */
     public Book findBook(String title) {
-        return null;//provisorio
+        Set<Long> keys = books.keySet();
+        for (Long key : keys) {
+            if (title.equalsIgnoreCase(books.get(key).getTitle())) {
+                return books.get(key);
+            }
+        }
+        return null;
     }
 
     /* @param login é um atributo de User

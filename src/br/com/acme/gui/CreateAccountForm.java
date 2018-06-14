@@ -13,21 +13,27 @@ import java.awt.Frame;
 
 /**
  *
- * @author
+ * @author Marcos Kuchak Filho
  */
 public class CreateAccountForm extends javax.swing.JDialog {
 
-    private AcademicLibrary library;
-    private Frame MainWindowForm;
+    private final AcademicLibrary library;
+    private final Frame MainWindowForm;
 
     /**
      * Creates new form CreateAccountForm
+     *
+     * @param parent
+     * @param modal
      */
     public CreateAccountForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.library = ALManager.getInstance();
         this.MainWindowForm = parent;
         initComponents();
+        //temporário abaixo
+        User usr = new User("Marcos", "mkuchak@hotmail.com", "(55) 98135-6433", "mkuchak", "123");
+        library.addUsers(usr);
     }
 
     /**
@@ -233,12 +239,12 @@ public class CreateAccountForm extends javax.swing.JDialog {
     }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.setVisible(false);
+        this.dispose();
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
