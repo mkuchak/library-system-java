@@ -186,22 +186,23 @@ public class CreateAccountForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCreateActionPerformed
+        if (validateForm()) {
+            return;
+        }
+
         String name = jtfName.getText();
         String email = jtfEmail.getText();
         String phone = jtfPhone.getText();
         String login = jtfLogin.getText().trim();
         String password = jpfPassword.getText();
-        if (!validateForm().isEmpty()) {
-            GUIMessage.error(validateForm());
-            return;
-        }
+
         User usr = new User(name, email, phone, login, password);
         library.addUsers(usr);
         clearForm();
         GUIMessage.info("User added successfully.");
     }//GEN-LAST:event_jbCreateActionPerformed
 
-    private String validateForm() {
+    private boolean validateForm() {
         String name = jtfName.getText();
         String email = jtfEmail.getText();
         String phone = jtfPhone.getText();
@@ -209,24 +210,30 @@ public class CreateAccountForm extends javax.swing.JDialog {
         String password = jpfPassword.getText();
         String confirmPassword = jpfPasswordConfirm.getText();
         if (name.isEmpty()) {
-            return "The name field can not be null.";
+            GUIMessage.error("The name field can not be null.");
+            return true;
         }
         if (email.isEmpty()) {
-            return "The e-mail field can not be null.";
+            GUIMessage.error("The e-mail field can not be null.");
+            return true;
         }
         if ("(  )      -    ".equals(phone)) {
-            return "The phone field can not be null.";
+            GUIMessage.error("The phone field can not be null.");
+            return true;
         }
         if (login.isEmpty()) {
-            return "The login field can not be null.";
+            GUIMessage.error("The login field can not be null.");
+            return true;
         }
         if (password.isEmpty()) {
-            return "The password field can not be null.";
+            GUIMessage.error("The password field can not be null.");
+            return true;
         }
         if (!password.equals(confirmPassword)) {
-            return "The confirm password must be identical as password field.";
+            GUIMessage.error("The confirm password must be identical as password field.");
+            return true;
         }
-        return "";
+        return false;
     }
 
     private void clearForm() {

@@ -51,14 +51,13 @@ public class BookListForm extends javax.swing.JDialog {
                 Book b = (Book) p;
                 model.setValueAt(b.getTitle(), line, 0);
 
-                //List<Author> authors = b.getAuthors();
+                List<Author> authors = b.getAuthors();
                 String names = "";
-                /*for (Author a : authors) {
+                for (Author a : authors) {
                     names = names + a.getName() + ", ";
-                }*/
+                }
 
                 model.setValueAt(names, line, 1);
-
                 model.setValueAt(b.getYear(), line, 2);
                 model.setValueAt(b.getVolume(), line, 3);
                 model.setValueAt(b.getLanguage(), line, 4);
@@ -95,7 +94,15 @@ public class BookListForm extends javax.swing.JDialog {
             new String [] {
                 "Title", "Author", "Year", "Volume", "Language", "ISBN", "Pages"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jtBookList);
 
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/garbage.png"))); // NOI18N

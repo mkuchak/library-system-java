@@ -19,7 +19,7 @@ public abstract class Publication {
      * Constructor default method
      */
     public Publication() {
-        this.authors = new ArrayList();
+        authors = new ArrayList();
     }
 
     /**
@@ -59,6 +59,10 @@ public abstract class Publication {
         this.volume = volume;
     }
 
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
     /**
      * Add object on list author
      *
@@ -85,13 +89,13 @@ public abstract class Publication {
      * @return author
      */
     public List<Author> getAuthors() {
-        return authors;
+        return this.authors;
     }
-    /*public ArrayList<User> getAuthors() {
-        List<Author> collectionAuthors = this.authors;
-        ArrayList<User> authors = new ArrayList();
+    /*public List<Author> getAuthors() {
+        Collection<Author> collectionAuthors = this.authors;
+        ArrayList<Author> getAuthors = new ArrayList();
         for (Author i : collectionAuthors) {
-            authors.add(i);
+            getAuthors.add(i);
         }
         return getAuthors;
     }*/

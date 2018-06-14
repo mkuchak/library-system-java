@@ -16,26 +16,27 @@ public class User extends Person {
     private String password;
     private Date lastAccess;
     private AcademicLibrary libray;
-    private final String LOGIN = "admin";
-    private final String PASSWORD = "admin";
+    //private final String LOGIN = "admin";
+    //private final String PASSWORD = "admin";
 
     public User(String name, String email, String phone, String login, String password) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
+        super(name, email);
+        //this.name = name;
+        //this.email = email;
         this.login = login;
+        this.phone = phone;
         this.password = password;
         this.lastAccess = new Date();
     }
 
-    public User(String login, String password) {
+    /*public User(String login, String password) {
         libray = ALManager.getInstance();
         this.login = login;
         this.password = password;
         lastAccess = new Date();
-    }
+    }*/
 
-    public String getName() {
+ /*public String getName() {
         return name;
     }
 
@@ -49,8 +50,7 @@ public class User extends Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
+    }*/
     public String getPhone() {
         return phone;
     }
@@ -83,7 +83,7 @@ public class User extends Person {
     * @method isValid é utilizado para verificar se o login e senha do usuario são os mesmos no arquivo persistido
     * @return retorna true se o login e senha estão corretos
      */
-    public boolean isValid() {
+ /*public boolean isValid() {
         if (this.login.equalsIgnoreCase(LOGIN) && this.password.equalsIgnoreCase(PASSWORD)) {
             return true;
         }
@@ -94,6 +94,5 @@ public class User extends Person {
             }
         }
         return false;
-    }
-
+    }*/
 }

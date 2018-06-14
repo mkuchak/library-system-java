@@ -9,6 +9,16 @@ public class Author extends Person {
     private String afiliation;
     private boolean isCorrespondingAuthor;
 
+    public Author(String name, String email) {
+        super(name, email);
+    }
+
+    public Author(String name, String email, String afiliation, boolean isCorrespondingAuthor) {
+        this(name, email);
+        this.afiliation = afiliation;
+        this.isCorrespondingAuthor = isCorrespondingAuthor;
+    }
+
     public String getAfiliation() {
         return afiliation;
     }

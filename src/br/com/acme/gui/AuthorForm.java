@@ -6,11 +6,7 @@
 package br.com.acme.gui;
 
 import br.com.acme.Author;
-import java.awt.Dialog;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,19 +16,18 @@ public class AuthorForm extends javax.swing.JDialog {
 
     //private final Dialog DMainWindowForm;
     private List<Author> authors;
-    private final Dialog PreviousWindowForm;
 
     /**
      * Creates new form AuthorForm
      *
      * @param parent
      * @param modal
+     * @param authors
      */
-    public AuthorForm(java.awt.Dialog parent, boolean modal) {
+    public AuthorForm(java.awt.Dialog parent, boolean modal, List<Author> authors) {
         super(parent, modal);
         initComponents();
-        //setDefaultCloseOperation(AuthorForm.DO_NOTHING_ON_CLOSE);
-        this.PreviousWindowForm = parent;
+        this.authors = authors;
     }
 
     /**
@@ -46,15 +41,16 @@ public class AuthorForm extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jtfEmail = new javax.swing.JTextField();
-        jtxName = new javax.swing.JTextField();
-        jtxAfiliation = new javax.swing.JTextField();
+        jtfName = new javax.swing.JTextField();
+        jtfAfiliation = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jcblsCorresponding = new javax.swing.JCheckBox();
+        jcbIsCorresponding = new javax.swing.JCheckBox();
         jbOk = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Author");
         setResizable(false);
 
@@ -62,25 +58,10 @@ public class AuthorForm extends javax.swing.JDialog {
         jLabel1.setText("Add Author ");
 
         jtfEmail.setName("jtfEmail"); // NOI18N
-        jtfEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfEmailActionPerformed(evt);
-            }
-        });
 
-        jtxName.setName("jtxName"); // NOI18N
-        jtxName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxNameActionPerformed(evt);
-            }
-        });
+        jtfName.setName("jtfName"); // NOI18N
 
-        jtxAfiliation.setName("jtxAfiliation"); // NOI18N
-        jtxAfiliation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxAfiliationActionPerformed(evt);
-            }
-        });
+        jtfAfiliation.setName("jtfAfiliation"); // NOI18N
 
         jLabel2.setText("Name:");
 
@@ -88,8 +69,8 @@ public class AuthorForm extends javax.swing.JDialog {
 
         jLabel4.setText("Afiliation:");
 
-        jcblsCorresponding.setText("Corresponding author?");
-        jcblsCorresponding.setName("jcblsCorresponding"); // NOI18N
+        jcbIsCorresponding.setText("Corresponding author?");
+        jcbIsCorresponding.setName("jcbIsCorresponding"); // NOI18N
 
         jbOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/check.png"))); // NOI18N
         jbOk.setText("OK");
@@ -121,7 +102,7 @@ public class AuthorForm extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jcblsCorresponding, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbIsCorresponding, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
                                 .addComponent(jbOk, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,11 +115,11 @@ public class AuthorForm extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jtxName, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jtxAfiliation, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtfAfiliation, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
@@ -153,17 +134,17 @@ public class AuthorForm extends javax.swing.JDialog {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxAfiliation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfAfiliation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(47, 47, 47)
-                .addComponent(jcblsCorresponding, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcbIsCorresponding, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbClose)
@@ -171,43 +152,67 @@ public class AuthorForm extends javax.swing.JDialog {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        jbClose.getAccessibleContext().setAccessibleName("");
+
         getAccessibleContext().setAccessibleDescription("");
 
-        pack();
+        setSize(new java.awt.Dimension(463, 398));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtfEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfEmailActionPerformed
-
-    private void jtxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxNameActionPerformed
-
-    private void jtxAfiliationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxAfiliationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxAfiliationActionPerformed
-
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+        if (validateForm()) {
+            return;
+        }
 
-        //Author author = new Author(jtxName.getText(), jtxAfiliation.getText(), jtfEmail.getText(), jcblsCorresponding.isSelected());
+        String name = jtfName.getText();
+        String email = jtfEmail.getText();
+        String afiliation = jtfAfiliation.getText();
+        boolean isCorresponding = jcbIsCorresponding.isSelected();
+
+        Author a = new Author(name, email, afiliation, isCorresponding);
+        this.authors.add(a);
+
+        clearForm();
+        GUIMessage.info("Author added successfully.");
     }//GEN-LAST:event_jbOkActionPerformed
 
+    private boolean validateForm() {
+        String name = jtfName.getText();
+        String email = jtfEmail.getText();
+        String afiliation = jtfAfiliation.getText();
+        if (name.isEmpty()) {
+            GUIMessage.error("The name field can not be null.");
+            return true;
+        }
+        if (email.isEmpty()) {
+            GUIMessage.error("The e-mail field can not be null.");
+            return true;
+        }
+        if (afiliation.isEmpty()) {
+            GUIMessage.error("The afiliation field can not be null.");
+            return true;
+        }
+        return false;
+    }
+
+    private void clearForm() {
+        jtfName.setText("");
+        jtfEmail.setText("");
+        jtfAfiliation.setText("");
+        jcbIsCorresponding.setSelected(false);
+    }
+
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
-        this.dispose();
-        //AuthorForm.this.setVisible(false);
-        //PreviousWindowForm.setVisible(true);
+        setVisible(false);
+        dispose();
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
-        this.dispose();
-        //AuthorForm.this.setVisible(false);
-        //PreviousWindowForm.setVisible(true);
+        setVisible(false);
+        dispose();
     }
-    /**
-     * @param args the command line arguments
-     */
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -215,9 +220,9 @@ public class AuthorForm extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbOk;
-    private javax.swing.JCheckBox jcblsCorresponding;
+    private javax.swing.JCheckBox jcbIsCorresponding;
+    private javax.swing.JTextField jtfAfiliation;
     private javax.swing.JTextField jtfEmail;
-    private javax.swing.JTextField jtxAfiliation;
-    private javax.swing.JTextField jtxName;
+    private javax.swing.JTextField jtfName;
     // End of variables declaration//GEN-END:variables
 }

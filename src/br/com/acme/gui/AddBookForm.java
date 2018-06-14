@@ -7,7 +7,6 @@ package br.com.acme.gui;
 
 import br.com.acme.ALManager;
 import br.com.acme.AcademicLibrary;
-import java.awt.Frame;
 import br.com.acme.Author;
 import br.com.acme.Book;
 import java.util.ArrayList;
@@ -24,16 +23,18 @@ public class AddBookForm extends javax.swing.JDialog {
 
     /**
      * Creates new form Book
+     *
+     * @param parent
+     * @param modal
      */
     public AddBookForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        //ArrayList<Author> authors;
+        authors = new ArrayList();
         library = ALManager.getInstance();
         initComponents();
-        //setDefaultCloseOperation(AuthorForm.DO_NOTHING_ON_CLOSE);
         //temporário abaixo
-        Book book = new Book("pt_BR", 121245, (short) 300, "Meu Primeiro Livro", (short) 2018, (byte) 1);
-        library.addPublication(book);
+        //Book book = new Book("pt_BR", 121245, (short) 300, "Meu Primeiro Livro", (short) 2018, (byte) 1);
+        //library.addPublication(book);
     }
 
     /**
@@ -217,13 +218,15 @@ public class AddBookForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jtfLanguageActionPerformed
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
-        AuthorForm author = new AuthorForm(this, true);
-        author.setVisible(true); //exibe o dialog do author
-        this.setVisible(false);//esconde a tela book
-
+        AuthorForm authorForm = new AuthorForm(this, true, authors);
+        authorForm.setVisible(true); //exibe o dialog do author
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
+        if (validateForm()) {
+            return;
+        }
+
         String title = jtfTitle.getText();
         short year = Short.parseShort(jtfYear.getText());
         byte volume = Byte.parseByte(jtfVolume.getText());
@@ -232,13 +235,57 @@ public class AddBookForm extends javax.swing.JDialog {
         short pages = Short.parseShort(jtfPages.getText());
 
         Book book = new Book(language, isbn, pages, title, year, volume);
-        //book.setAuthors(authors);
+        book.setAuthors(authors);
         library.addPublication(book);
 
         clearForm();
         GUIMessage.info("Book added successfully.");
 
     }//GEN-LAST:event_jbOkActionPerformed
+
+    private boolean validateForm() {
+        String title = jtfTitle.getText();
+        String language = jtfLanguage.getText();
+        String authorsField = authors.toString();
+        try {
+            short year = Short.parseShort(jtfYear.getText());
+            byte volume = Byte.parseByte(jtfVolume.getText());
+            long isbn = Long.parseLong(jtfIsbn.getText());
+            short pages = Short.parseShort(jtfPages.getText());
+        } catch (NumberFormatException ex) {
+            GUIMessage.error("Fill all the fields with real values.");
+            return true;
+        }
+        if (title.isEmpty()) {
+            GUIMessage.error("The title field can not be null.");
+            return true;
+        }
+        if ("[]".equals(authorsField)) {
+            GUIMessage.error("Add some author for this book.");
+            return true;
+        }
+        if (jtfYear.getText().isEmpty()) {
+            GUIMessage.error("The year field can not be null.");
+            return true;
+        }
+        if (jtfVolume.getText().isEmpty()) {
+            GUIMessage.error("The volume field can not be null.");
+            return true;
+        }
+        if (language.isEmpty()) {
+            GUIMessage.error("The language field can not be null.");
+            return true;
+        }
+        if (jtfIsbn.getText().isEmpty()) {
+            GUIMessage.error("The ISBN field can not be null.");
+            return true;
+        }
+        if (jtfPages.getText().isEmpty()) {
+            GUIMessage.error("The pages field can not be null.");
+            return true;
+        }
+        return false;
+    }
 
     private void clearForm() {
         jtfTitle.setText("");
@@ -247,6 +294,7 @@ public class AddBookForm extends javax.swing.JDialog {
         jtfLanguage.setText("");
         jtfIsbn.setText("");
         jtfPages.setText("");
+        //authors.clear();
     }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed

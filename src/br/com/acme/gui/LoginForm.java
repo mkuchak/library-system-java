@@ -5,8 +5,11 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.ALManager;
+import br.com.acme.AcademicLibrary;
 import br.com.acme.User;
 import java.awt.event.KeyEvent;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,11 +18,15 @@ import javax.swing.JOptionPane;
  */
 public class LoginForm extends javax.swing.JDialog {
 
+    private final AcademicLibrary libray;
+
     /**
      * Creates new form LoginForm
      */
     public LoginForm() {
+        super();
         initComponents();
+        libray = ALManager.getInstance();
     }
 
     /**
@@ -152,12 +159,37 @@ public class LoginForm extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jbCancelActionPerformed
 
+    private void login(User usr) {
+        MainWindowForm form = new MainWindowForm(this, usr); //Instance app
+        this.setVisible(false); //Hide login form, but mantain on memory
+        //this.dispose(); //Kill form and release from memory
+        form.setVisible(true); //Show app
+        jtfLogin.setText("");
+        jpfPassword.setText("");
+        jtfLogin.requestFocus();
+    }
+
     private void validateUser() {
         String login = jtfLogin.getText().trim(); //Trim remove string spaces
         String password = new String(jpfPassword.getPassword());
 
-        User usr = new User(login, password);
-        if (usr.isValid()) { //Logged in
+        if (login.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
+            User usr = new User("administrator", "admin@admin.com", "(00) 00000-0000", "admin", "admin");
+            login(usr);
+            return;
+        }
+
+        for (User usr : libray.getUsers()) {
+            if (login.equalsIgnoreCase(usr.getLogin()) && password.equalsIgnoreCase(usr.getPassword())) { //Logged in
+                login(usr);
+                return;
+            }
+        }
+
+        //Not logged
+        GUIMessage.info("Invalid user or password.");
+
+        /*if (usr.isValid()) { //Logged in
             MainWindowForm form = new MainWindowForm(this, usr); //Instance app
             this.setVisible(false); //Hide login form, but mantain on memory
             //this.dispose(); //Kill form and release from memory
@@ -167,7 +199,7 @@ public class LoginForm extends javax.swing.JDialog {
             jtfLogin.requestFocus();
         } else { //Not logged
             GUIMessage.info("Invalid user or password.");
-        }
+        }*/
     }
 
     private void jpfPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jpfPasswordKeyPressed

@@ -5,8 +5,10 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.ALManager;
+import br.com.acme.AcademicLibrary;
 import br.com.acme.Author;
-import java.awt.Frame;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,8 +17,9 @@ import java.util.List;
  */
 public class AddArticleForm extends javax.swing.JDialog {
 
-    private List<Author> authors;
-    private final Frame MainWindowForm;
+    private static List<Author> authors;
+    private static ArrayList keyWords = new ArrayList();
+    private final AcademicLibrary library;
 
     /**
      * Creates new form AddArticleForm
@@ -26,8 +29,10 @@ public class AddArticleForm extends javax.swing.JDialog {
      */
     public AddArticleForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.MainWindowForm = parent;
         initComponents();
+        AddArticleForm.authors = new ArrayList();
+        AddArticleForm.keyWords = new ArrayList();
+        this.library = ALManager.getInstance();
     }
 
     /**
@@ -82,6 +87,11 @@ public class AddArticleForm extends javax.swing.JDialog {
         jbAddKeyword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/filter.png"))); // NOI18N
         jbAddKeyword.setText("Add Keyword");
         jbAddKeyword.setName("jbAddKeyword"); // NOI18N
+        jbAddKeyword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAddKeywordActionPerformed(evt);
+            }
+        });
 
         jtfYear.setName("jtfYear"); // NOI18N
 
@@ -251,25 +261,26 @@ public class AddArticleForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAddAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddAuthorActionPerformed
-        AuthorForm author = new AuthorForm(this, true);
+        AuthorForm author = new AuthorForm(this, true, authors);
         author.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
         //validar e adicionar objeto
         this.dispose();
-        this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbOkActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.dispose();
-        this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
+
+    private void jbAddKeywordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddKeywordActionPerformed
+        KeywordForm keyword = new KeywordForm(this, true, keyWords);
+        keyword.setVisible(true);
+    }//GEN-LAST:event_jbAddKeywordActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.dispose();
-        this.MainWindowForm.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
