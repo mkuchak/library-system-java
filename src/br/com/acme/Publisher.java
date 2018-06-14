@@ -1,10 +1,12 @@
 package br.com.acme;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Marcos Kuchak Filho
  */
-public class Publisher {
+public class Publisher implements Serializable {
 
     private String name;
     private String country;

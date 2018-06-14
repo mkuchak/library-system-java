@@ -1,10 +1,12 @@
 package br.com.acme;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Marcos Kuchak Filho
  */
-public class Journal {
+public class Journal implements Serializable {
 
     private String name;
     private byte impactFactor;

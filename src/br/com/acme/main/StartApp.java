@@ -1,17 +1,23 @@
 package br.com.acme.main;
 
+import br.com.acme.ALManager;
 import br.com.acme.gui.LoginForm;
+import java.io.File;
 import javax.swing.UIManager;
 
 public class StartApp {
 
-    public static void main(String[] args) {
-        try {
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+    public static File path;
+    public static String file;
 
+    public static void main(String[] args) {
+        path = new File(System.getProperty("user.home") + "\\LibraryFiles\\");
+        path.mkdirs();
+        file = System.getProperty("user.home") + "\\LibraryFiles\\library";
+        try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            ALManager.loadLibrary(file);
         } catch (Exception ex) {
-            //ignored
         }
         LoginForm form = new LoginForm();
         form.setVisible(true);

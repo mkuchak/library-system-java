@@ -28,8 +28,8 @@ public class ALManager {
     }
 
     //Méotodo chamado para tentar carregar um arquivo já existente no caminho especificado
-    public static void loadLibrary(String directory) throws FileNotFoundException, IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream(directory);
+    public static void loadLibrary(String path) throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream(path);
         ObjectInputStream ois = new ObjectInputStream(fis);
         Object obj = ois.readObject();
         library = (AcademicLibrary) obj;
@@ -38,8 +38,8 @@ public class ALManager {
     }
 
     //Méotodo chamado para salvar na memória a instância de AcademicLibrary
-    public static void persistLibrary(String directory) throws FileNotFoundException, IOException {
-        FileOutputStream fos = new FileOutputStream(directory);
+    public static void persistLibrary(String path) throws FileNotFoundException, IOException {
+        FileOutputStream fos = new FileOutputStream(path);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(library);
         oos.flush();

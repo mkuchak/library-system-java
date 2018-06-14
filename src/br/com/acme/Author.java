@@ -1,10 +1,12 @@
 package br.com.acme;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Marcos Kuchak Filho
  */
-public class Author extends Person {
+public class Author extends Person implements Serializable {
 
     private String afiliation;
     private boolean isCorrespondingAuthor;

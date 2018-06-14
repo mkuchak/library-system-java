@@ -1,12 +1,13 @@
 package br.com.acme;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Marcos Kuchak Filho
  */
-public class Article extends Publication {
+public class Article extends Publication implements Serializable {
 
     private ArrayList<String> keyWords = new ArrayList();
     private long issn;

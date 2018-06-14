@@ -5,11 +5,19 @@
  */
 package br.com.acme.gui;
 
+import br.com.acme.ALManager;
 import br.com.acme.User;
+import br.com.acme.main.StartApp;
 import java.awt.Desktop;
 import java.awt.Toolkit; //Window Icon: Add this import > jFrame properties > iconImage > Custom Code > add changing class name: Toolkit.getDefaultToolkit().getImage(MainWindowForm.class.getResource("/br/com/acme/icons/common/books.png"))
 import java.awt.event.KeyEvent;
 import java.net.URL;
+import javax.swing.JFileChooser;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,11 +50,11 @@ public class MainWindowForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
+        jbNew = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JToolBar.Separator();
-        jButton2 = new javax.swing.JButton();
+        jbOpen = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jButton3 = new javax.swing.JButton();
+        jbSave = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jButton4 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
@@ -89,28 +97,43 @@ public class MainWindowForm extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
         jToolBar1.setName("jtbMenu"); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document3.png"))); // NOI18N
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setName("jbmbNew"); // NOI18N
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        jbNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/document3.png"))); // NOI18N
+        jbNew.setFocusable(false);
+        jbNew.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbNew.setName("jbmbNew"); // NOI18N
+        jbNew.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNewActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jbNew);
         jToolBar1.add(jSeparator5);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setName("jbmbOpen"); // NOI18N
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        jbOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/folder4.png"))); // NOI18N
+        jbOpen.setFocusable(false);
+        jbOpen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbOpen.setName("jbmbOpen"); // NOI18N
+        jbOpen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOpenActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jbOpen);
         jToolBar1.add(jSeparator4);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setName("jbmbSave"); // NOI18N
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
+        jbSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/diskette.png"))); // NOI18N
+        jbSave.setFocusable(false);
+        jbSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbSave.setName("jbmbSave"); // NOI18N
+        jbSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSaveActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jbSave);
         jToolBar1.add(jSeparator3);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/add-user.png"))); // NOI18N
@@ -381,6 +404,47 @@ public class MainWindowForm extends javax.swing.JFrame {
         about.setVisible(true);
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void jbSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSaveActionPerformed
+        JFileChooser file = new JFileChooser(StartApp.path);
+        file.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        file.setCurrentDirectory(StartApp.path);
+        file.setSelectedFile(new File("library.ser"));
+        int res = file.showSaveDialog(this);
+        if (res == JFileChooser.CANCEL_OPTION) {
+            return;
+        }
+        try {
+            File saveFile = file.getSelectedFile();
+            ALManager.persistLibrary(saveFile.getCanonicalPath());
+        } catch (IOException ex) {
+        }
+    }//GEN-LAST:event_jbSaveActionPerformed
+
+    private void jbOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOpenActionPerformed
+        JFileChooser file = new JFileChooser();
+        file.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        file.setCurrentDirectory(StartApp.path);
+        int res = file.showOpenDialog(this);
+        if (res == JFileChooser.CANCEL_OPTION) {
+            return;
+        }
+        File openFile = file.getSelectedFile();
+        JOptionPane.showMessageDialog(rootPane, "You opened " + openFile.getName());
+        try {
+            ALManager.loadLibrary(openFile.getCanonicalPath());
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(MainWindowForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jbOpenActionPerformed
+
+    private void jbNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewActionPerformed
+        if (GUIMessage.action() == JOptionPane.YES_OPTION) {
+            ALManager.newLibrary();
+            GUIMessage.info("New library created.");
+        }
+    }//GEN-LAST:event_jbNewActionPerformed
+
     private void createUserForm() {
         CreateAccountForm account = new CreateAccountForm(this, true);
         //this.setVisible(false);
@@ -388,9 +452,6 @@ public class MainWindowForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu2;
@@ -413,6 +474,9 @@ public class MainWindowForm extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JButton jbNew;
+    private javax.swing.JButton jbOpen;
+    private javax.swing.JButton jbSave;
     private javax.swing.JLabel jlLibraryImage;
     private javax.swing.JLabel jlUserInfo;
     private javax.swing.JMenu jmFile;

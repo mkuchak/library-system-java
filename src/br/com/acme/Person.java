@@ -1,10 +1,12 @@
 package br.com.acme;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Marcos Kuchak Filho
  */
-public abstract class Person {
+public abstract class Person implements Serializable {
 
     private String name;
     private String email;

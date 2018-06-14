@@ -1,5 +1,6 @@
 package br.com.acme;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
  *
  * @author Marcos Kuchak Filho
  */
-public abstract class Publication {
+public abstract class Publication implements Serializable {
 
     private String title;
     private short year;

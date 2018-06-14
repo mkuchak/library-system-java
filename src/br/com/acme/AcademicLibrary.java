@@ -1,5 +1,6 @@
 package br.com.acme;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -11,12 +12,12 @@ import java.util.Set;
  *
  * @author Marcos Kuchak Filho
  */
-public class AcademicLibrary extends ILibray {
+public class AcademicLibrary extends ILibrary implements Serializable {
 
     private String name;
     private String description;
     private Date creationDate;
-    private HashMap<String, User> users = new HashMap(); //Key: Login
+    private HashMap<String, User> users = new HashMap();     //Key: Login
     private HashMap<Long, Article> articles = new HashMap(); //Key: ISSN (e.g. 1018-4783)
     private HashMap<Long, Book> books = new HashMap();       //Key: ISBN (e.g. 978-3-16-148410-0)
     private boolean selectedLog;
