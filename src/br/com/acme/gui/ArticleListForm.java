@@ -6,6 +6,7 @@
 package br.com.acme.gui;
 
 import java.awt.Frame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -57,6 +58,11 @@ public class ArticleListForm extends javax.swing.JDialog {
 
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/garbage.png"))); // NOI18N
         jbDelete.setText("Delete");
+        jbDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDeleteActionPerformed(evt);
+            }
+        });
 
         jbClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/close.png"))); // NOI18N
         jbClose.setText("Close");
@@ -101,6 +107,12 @@ public class ArticleListForm extends javax.swing.JDialog {
         this.setVisible(false);
         this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
+
+    private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
+        if (GUIMessage.action() == JOptionPane.YES_OPTION) {
+            //action code here
+        }
+    }//GEN-LAST:event_jbDeleteActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.setVisible(false);
