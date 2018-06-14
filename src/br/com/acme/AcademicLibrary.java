@@ -121,6 +121,26 @@ public class AcademicLibrary extends ILibray {
     }
 
     /**
+     * Removes some publication.
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public boolean removePublication(long id) {
+        if (this.articles.containsKey(id)) {
+            this.articles.remove(id);
+            return true;
+
+        } else if (this.books.containsKey(id)) {
+            this.books.remove(id);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Retorna o array publications. publications.
      *
      * @return publication

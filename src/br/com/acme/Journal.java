@@ -35,6 +35,24 @@ public class Journal {
         this.name = name;
     }
 
+    /**
+     * Método que retorna o Publisher
+     *
+     * @return
+     */
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    /**
+     * Métod que seta o Publisher
+     *
+     * @param publisher
+     */
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
     public byte getImpactFactor() {
         return impactFactor;
     }

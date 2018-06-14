@@ -7,7 +7,10 @@ package br.com.acme.gui;
 
 import br.com.acme.ALManager;
 import br.com.acme.AcademicLibrary;
+import br.com.acme.Article;
 import br.com.acme.Author;
+import br.com.acme.Journal;
+import br.com.acme.Publisher;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +65,15 @@ public class AddArticleForm extends javax.swing.JDialog {
         jtfEndPage = new javax.swing.JTextField();
         jbOk = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jpJournal = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jtfName = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jtfImpactFactor = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jtfPublisher = new javax.swing.JTextField();
+        jtfCountry = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -133,18 +144,74 @@ public class AddArticleForm extends javax.swing.JDialog {
             }
         });
 
-        jPanel1.setToolTipText("");
-        jPanel1.setName("jpJournal"); // NOI18N
+        jpJournal.setBorder(javax.swing.BorderFactory.createTitledBorder("Journal"));
+        jpJournal.setToolTipText("");
+        jpJournal.setName("jpJournal"); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+        jLabel9.setText("Name:");
+
+        jtfName.setName("jtfYear"); // NOI18N
+
+        jLabel10.setText("Impact Factor:");
+
+        jtfImpactFactor.setName("jtfYear"); // NOI18N
+
+        jLabel11.setText("Publisher:");
+
+        jLabel12.setText("Country:");
+
+        jtfPublisher.setName("jtfYear"); // NOI18N
+
+        jtfCountry.setName("jtfYear"); // NOI18N
+
+        javax.swing.GroupLayout jpJournalLayout = new javax.swing.GroupLayout(jpJournal);
+        jpJournal.setLayout(jpJournalLayout);
+        jpJournalLayout.setHorizontalGroup(
+            jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpJournalLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpJournalLayout.createSequentialGroup()
+                        .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11))
+                        .addGap(42, 42, 42)
+                        .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jpJournalLayout.createSequentialGroup()
+                        .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpJournalLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpJournalLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(63, 63, 63)))
+                        .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfImpactFactor, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jpJournalLayout.setVerticalGroup(
+            jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpJournalLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jtfImpactFactor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jtfPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jpJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jtfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jLabel8.setText("End Page:");
@@ -153,23 +220,40 @@ public class AddArticleForm extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jtfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jtfStartPage, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtfEndPage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtfLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfIssn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbOk)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbClose))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(302, 302, 302)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(73, 73, 73)
-                                .addComponent(jbAddAuthor)
-                                .addGap(30, 30, 30)
-                                .addComponent(jbAddKeyword))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel4)
@@ -178,38 +262,15 @@ public class AddArticleForm extends javax.swing.JDialog {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel3)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jtfYear, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfYear, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtfIssn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jtfStartPage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jtfEndPage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jbOk)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jbClose))
-                                            .addComponent(jtfLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                .addGap(64, 64, 64)
+                                .addComponent(jbAddAuthor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbAddKeyword)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jpJournal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,17 +281,18 @@ public class AddArticleForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jtfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbAddAuthor)
-                    .addComponent(jbAddKeyword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpJournal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbAddAuthor)
+                            .addComponent(jbAddKeyword))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jtfYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jtfVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -238,22 +300,22 @@ public class AddArticleForm extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jtfLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jtfIssn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jtfEndPage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtfStartPage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(48, 48, 48)
+                            .addComponent(jLabel8)
+                            .addComponent(jtfStartPage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbOk)
-                            .addComponent(jbClose)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                            .addComponent(jbClose))
+                        .addGap(14, 14, 14)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -266,9 +328,92 @@ public class AddArticleForm extends javax.swing.JDialog {
     }//GEN-LAST:event_jbAddAuthorActionPerformed
 
     private void jbOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkActionPerformed
-        //validar e adicionar objeto
-        this.dispose();
+        if (validateForm()) {
+            return;
+        }
+
+        String name = jtfName.getText();
+        byte impactFactor = Byte.parseByte(jtfImpactFactor.getText());
+        String publisher = jtfPublisher.getText();
+        String country = jtfCountry.getText();
+        long issn = Long.parseLong(jtfIssn.getText());
+        short startPage = Short.parseShort(jtfStartPage.getText());
+        short endPage = Short.parseShort(jtfEndPage.getText());
+        String title = jtfTitle.getText();
+        short year = Short.parseShort(jtfYear.getText());
+        byte volume = Byte.parseByte(jtfVolume.getText());
+
+        Journal journal = new Journal(jtfName.getText(), impactFactor, new Publisher(publisher, country));
+        Article article = new Article(issn, (byte) 0, startPage, endPage, title, year, volume);
+
+        article.setJournal(journal);
+        System.out.println(article.getKeyWords());
+        article.setKeyWords(keyWords);
+        article.setAuthors(authors);
+        library.addPublication(article);
+
+        clearForm();
+        GUIMessage.info("Article added successfully.");
     }//GEN-LAST:event_jbOkActionPerformed
+
+    private boolean validateForm() {
+        String name = jtfName.getText();
+        String publisher = jtfPublisher.getText();
+        String country = jtfCountry.getText();
+        String title = jtfTitle.getText();
+        String language = jtfLanguage.getText();
+        String authorsField = authors.toString();
+        try {
+            byte impactFactor = Byte.parseByte(jtfImpactFactor.getText());
+            long issn = Long.parseLong(jtfIssn.getText());
+            short startPage = Short.parseShort(jtfStartPage.getText());
+            short endPage = Short.parseShort(jtfEndPage.getText());
+            short year = Short.parseShort(jtfYear.getText());
+            byte volume = Byte.parseByte(jtfVolume.getText());
+        } catch (NumberFormatException ex) {
+            GUIMessage.error("Fill all the fields with real values.");
+            return true;
+        }
+        if ("[]".equals(authorsField)) {
+            GUIMessage.error("Add some author for this article.");
+            return true;
+        }
+        if (name.isEmpty()) {
+            GUIMessage.error("The name field can not be null.");
+            return true;
+        }
+        if (publisher.isEmpty()) {
+            GUIMessage.error("The publisher field can not be null.");
+            return true;
+        }
+        if (country.isEmpty()) {
+            GUIMessage.error("The country field can not be null.");
+            return true;
+        }
+        if (title.isEmpty()) {
+            GUIMessage.error("The title field can not be null.");
+            return true;
+        }
+        if (language.isEmpty()) {
+            GUIMessage.error("The title field can not be null.");
+            return true;
+        }
+        return false;
+    }
+
+    private void clearForm() {
+        jtfName.setText("");
+        jtfImpactFactor.setText("");
+        jtfPublisher.setText("");
+        jtfCountry.setText("");
+        jtfIssn.setText("");
+        jtfStartPage.setText("");
+        jtfEndPage.setText("");
+        jtfTitle.setText("");
+        jtfLanguage.setText("");
+        jtfYear.setText("");
+        jtfVolume.setText("");
+    }
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.dispose();
@@ -284,6 +429,9 @@ public class AddArticleForm extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -291,14 +439,19 @@ public class AddArticleForm extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jbAddAuthor;
     private javax.swing.JButton jbAddKeyword;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbOk;
+    private javax.swing.JPanel jpJournal;
+    private javax.swing.JTextField jtfCountry;
     private javax.swing.JTextField jtfEndPage;
+    private javax.swing.JTextField jtfImpactFactor;
     private javax.swing.JTextField jtfIssn;
     private javax.swing.JTextField jtfLanguage;
+    private javax.swing.JTextField jtfName;
+    private javax.swing.JTextField jtfPublisher;
     private javax.swing.JTextField jtfStartPage;
     private javax.swing.JTextField jtfTitle;
     private javax.swing.JTextField jtfVolume;

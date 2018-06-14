@@ -7,7 +7,7 @@ package br.com.acme;
 public class Publisher {
 
     private String name;
-    private String coutry;
+    private String country;
 
     /**
      * Metodo construtor Default
@@ -22,9 +22,9 @@ public class Publisher {
      * @param name nome publisher
      * @param country nome país
      */
-    public Publisher(String name, String coutry) {
+    public Publisher(String name, String country) {
         this.name = name;
-        this.coutry = coutry;
+        this.country = country;
     }
 
     public String getName() {
@@ -35,12 +35,12 @@ public class Publisher {
         this.name = name;
     }
 
-    public String getCoutry() {
-        return coutry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCoutry(String coutry) {
-        this.coutry = coutry;
+    public void setCoutry(String country) {
+        this.country = country;
     }
 
 }

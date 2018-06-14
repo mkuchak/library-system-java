@@ -47,6 +47,14 @@ public class Article extends Publication {
         }
     }
 
+    public Journal getJournal() {
+        return journal;
+    }
+
+    public void setJournal(Journal journal) {
+        this.journal = journal;
+    }
+
     public long getIssn() {
         return issn;
     }

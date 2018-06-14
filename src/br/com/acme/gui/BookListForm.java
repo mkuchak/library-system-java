@@ -11,7 +11,6 @@ import br.com.acme.Author;
 import br.com.acme.Book;
 import br.com.acme.Publication;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -159,6 +158,20 @@ public class BookListForm extends javax.swing.JDialog {
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
         if (GUIMessage.action() == JOptionPane.YES_OPTION) {
             //action code here
+            if (jtBookList.getSelectedRow() != -1) {
+                DefaultTableModel rows = (DefaultTableModel) jtBookList.getModel();
+                TableModel model = jtBookList.getModel();
+
+                ArrayList<Publication> publications = library.getAllPublications();
+                String rowTitle = (String) model.getValueAt(jtBookList.getSelectedRow(), 0);
+                for (Publication p : publications) {
+                    Book b = (Book) p;
+                    if (b.getTitle().equals(rowTitle)) {
+                        library.removePublication(b.getIsbn());
+                    }
+                }
+                rows.removeRow(jtBookList.getSelectedRow());
+            }
         }
     }//GEN-LAST:event_jbDeleteActionPerformed
 

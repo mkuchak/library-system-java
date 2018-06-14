@@ -5,8 +5,16 @@
  */
 package br.com.acme.gui;
 
-import java.awt.Frame;
+import br.com.acme.ALManager;
+import br.com.acme.AcademicLibrary;
+import br.com.acme.Article;
+import br.com.acme.Author;
+import br.com.acme.Publication;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -14,15 +22,60 @@ import javax.swing.JOptionPane;
  */
 public class ArticleListForm extends javax.swing.JDialog {
 
-    private final Frame MainWindowForm;
+    private AcademicLibrary library;
 
     /**
      * Creates new form ArticleListForm
      */
     public ArticleListForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.MainWindowForm = parent;
         initComponents();
+
+        library = ALManager.getInstance();
+        populateTable();
+    }
+
+    private void populateTable() {
+        DefaultTableModel rows = (DefaultTableModel) jtArticleList.getModel();
+        TableModel model = jtArticleList.getModel();
+
+        ArrayList<Publication> publications = library.getAllPublications();
+
+        int line = 0;
+        for (Publication p : publications) {
+            if (p instanceof Article) {
+                rows.addRow(new Object[]{});
+                Article a = (Article) p;
+
+                model.setValueAt(a.getTitle(), line, 0);
+
+                List<Author> authors = a.getAuthors();
+                String names = "";
+                for (Author x : authors) {
+                    names = names + x.getName() + ", ";
+                }
+
+                model.setValueAt(names, line, 1);
+
+                model.setValueAt(a.getYear(), line, 2);
+                model.setValueAt(a.getVolume(), line, 3);
+
+                ArrayList<String> keyWords = a.getKeyWords();
+                String s = "";
+                for (String k : keyWords) {
+                    s = s + k + ", ";
+                }
+
+                model.setValueAt(s, line, 4);
+                model.setValueAt(a.getIssn(), line, 5);
+                model.setValueAt(a.getStartPage() + "-" + a.getEndPage(), line, 6);
+                model.setValueAt(a.getJournal().getName(), line, 7);
+                model.setValueAt(a.getJournal().getImpactFactor(), line, 8);
+                model.setValueAt(a.getJournal().getPublisher().getName(), line, 9);
+                model.setValueAt(a.getJournal().getPublisher().getCountry(), line, 10);
+                line++;
+            }
+        }
     }
 
     /**
@@ -35,7 +88,7 @@ public class ArticleListForm extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtArticleList = new javax.swing.JTable();
         jbDelete = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
 
@@ -43,18 +96,23 @@ public class ArticleListForm extends javax.swing.JDialog {
         setTitle("Article List");
         setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtArticleList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title", "Author", "Year", "Volume", "Keywords", "ISSN", "Pages", "Name", "Impact Factor", "Publisher", "Country"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtArticleList);
 
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/acme/icons/common/garbage.png"))); // NOI18N
         jbDelete.setText("Delete");
@@ -105,7 +163,6 @@ public class ArticleListForm extends javax.swing.JDialog {
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
         this.dispose();
-        this.MainWindowForm.setVisible(true);
     }//GEN-LAST:event_jbCloseActionPerformed
 
     private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
@@ -116,13 +173,12 @@ public class ArticleListForm extends javax.swing.JDialog {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {
         this.dispose();
-        this.MainWindowForm.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbDelete;
+    private javax.swing.JTable jtArticleList;
     // End of variables declaration//GEN-END:variables
 }
