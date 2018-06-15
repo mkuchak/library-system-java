@@ -141,10 +141,10 @@ public class AccountListForm extends javax.swing.JDialog {
         if (GUIMessage.action() == JOptionPane.YES_OPTION) {
             //action code here
             if (jtAccounts.getSelectedRow() != -1) {
-                DefaultTableModel rows = (DefaultTableModel) jtAccounts.getModel();
-                TableModel model = jtAccounts.getModel();
+                DefaultTableModel model = (DefaultTableModel) jtAccounts.getModel();
+                //TableModel model = jtAccounts.getModel();
                 library.removeUser((String) model.getValueAt(jtAccounts.getSelectedRow(), 3));
-                rows.removeRow(jtAccounts.getSelectedRow());
+                model.removeRow(jtAccounts.getSelectedRow());
             }
         }
     }//GEN-LAST:event_jbDeleteActionPerformed
